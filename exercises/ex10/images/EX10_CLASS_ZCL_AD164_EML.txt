@@ -1,0 +1,111 @@
+CLASS zcl_ad164_eml_### DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+
+    METHODS:
+      cds_read_none_privileged IMPORTING out TYPE REF TO if_oo_adt_classrun_out,
+      cds_read_with_privileged IMPORTING out TYPE REF TO if_oo_adt_classrun_out,
+
+      eml_read_none_privileged IMPORTING out TYPE REF TO if_oo_adt_classrun_out  travel_uuid TYPE sysuuid_x16,
+      eml_read_with_privileged IMPORTING out TYPE REF TO if_oo_adt_classrun_out  travel_uuid TYPE sysuuid_x16,
+
+      eml_modify_none_privileged IMPORTING out TYPE REF TO if_oo_adt_classrun_out  travel_uuid TYPE sysuuid_x16,
+      eml_modify_with_privileged IMPORTING out TYPE REF TO if_oo_adt_classrun_out  travel_uuid TYPE sysuuid_x16.
+
+ENDCLASS.
+
+
+CLASS ZCL_AD164_EML_### IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    "Helper Travel_UUID for which we are not authorized
+    SELECT SINGLE travel_uuid FROM zad164_trvl_### WHERE agency_id = '070035' INTO @DATA(travel_uuid).
+
+    cds_read_none_privileged( out ).
+    cds_read_with_privileged( out ).
+
+    out->write( |-----------------------------------------------------------------------------------| ).
+
+    eml_read_none_privileged( out = out  travel_uuid = travel_uuid ).
+    eml_read_with_privileged( out = out  travel_uuid = travel_uuid ).
+
+    out->write( |-----------------------------------------------------------------------------------| ).
+
+    eml_modify_none_privileged( out = out  travel_uuid = travel_uuid ).
+    eml_modify_with_privileged( out = out  travel_uuid = travel_uuid ).
+
+    "Undo all changes.
+    ROLLBACK ENTITIES.
+
+  ENDMETHOD.
+
+  METHOD cds_read_none_privileged.
+    SELECT * FROM zad164_r_travel_### INTO TABLE @DATA(travels).
+    out->write( |CDS read, none-privileged. Number of records: { sy-dbcnt }| ).
+  ENDMETHOD.
+
+  METHOD cds_read_with_privileged.
+    SELECT * FROM zad164_r_travel_### INTO TABLE @DATA(travels) PRIVILEGED ACCESS.
+    out->write( |CDS read, with privileged. Number of records: { sy-dbcnt }| ).
+  ENDMETHOD.
+
+  METHOD eml_read_none_privileged.
+    READ ENTITIES OF ZAD164_R_Travel_###
+      ENTITY Travel
+        ALL FIELDS WITH VALUE #( ( TravelUUID = travel_uuid ) )
+        RESULT DATA(travels)
+        FAILED DATA(failed).
+    out->write( |EML read, none-privileged. Failed: { lines( failed-travel ) } Travels: { lines( travels ) }| ).
+    out->write( travels ).
+  ENDMETHOD.
+
+  METHOD eml_read_with_privileged.
+    READ ENTITIES OF ZAD164_R_Travel_### PRIVILEGED
+      ENTITY Travel
+        ALL FIELDS WITH VALUE #( ( TravelUUID = travel_uuid ) )
+        RESULT DATA(travels)
+        FAILED DATA(failed).
+    out->write( |EML read, with privileged. Failed: { lines( failed-travel ) } Travels: { lines( travels ) }| ).
+    out->write( travels ).
+  ENDMETHOD.
+
+  METHOD eml_modify_none_privileged.
+    MODIFY ENTITIES OF ZAD164_R_Travel_###
+      ENTITY Travel
+        UPDATE FIELDS ( Description )
+        WITH VALUE #( ( TravelUUID = travel_uuid  Description = 'Modify via EML' ) )
+        FAILED DATA(failed).
+
+    READ ENTITIES OF ZAD164_R_Travel_###
+      ENTITY Travel
+        ALL FIELDS WITH VALUE #( ( TravelUUID = travel_uuid ) )
+        RESULT DATA(travels).
+
+    out->write( |EML write, none-privileged. Failed: { lines( failed-travel ) } Travels: { lines( travels ) }| ).
+    out->write( travels ).
+  ENDMETHOD.
+
+  METHOD eml_modify_with_privileged.
+    MODIFY ENTITIES OF ZAD164_R_Travel_### PRIVILEGED
+      ENTITY Travel
+        UPDATE FIELDS ( Description )
+        WITH VALUE #( ( TravelUUID = travel_uuid  Description = 'Modified via EML' ) )
+        FAILED DATA(failed).
+
+    READ ENTITIES OF ZAD164_R_Travel_### PRIVILEGED
+      ENTITY Travel
+        ALL FIELDS WITH VALUE #( ( TravelUUID = travel_uuid ) )
+        RESULT DATA(travels).
+
+    out->write( |EML write, with privileged. Failed: { lines( failed-travel ) } Travels: { lines( travels ) }| ).
+    out->write( travels ).
+  ENDMETHOD.
+
+ENDCLASS.

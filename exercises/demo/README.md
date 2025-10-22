@@ -7,7 +7,9 @@
 
 **SAP Joule for Developers, ABAP AI capabilities** can be used in ADT to generate all required development artifacts – from the database table and the CDS objects to the RAP BO and OData service. It also provides support for implementing the business logic.
 
-<br/>
+
+**Demo:**
+
 <img src="images/ai_abapcloud_generator.gif" alt="AI-based ABAP Cloud app generation" width="100%"> 
 
 **Relevant sessions at SAP TechEd 2025:**
@@ -22,9 +24,10 @@
 
 The ABAP Development Tools for Eclipse (ADT) offers **standard ABAP Cloud generators** to generate all required development artifacts – from the database table and the CDS objects to the RAP BO and OData service. 
 
-**🚧... animated gif to be provided here: classic_abapcloud_generator.gif ...🚧**
+**Demo:**
 
-<br/>
+*🚧... animated gif to be provided here: classic_abapcloud_generator.gif ...🚧*
+
 <img src="images/classic_abapcloud_generator.gif" alt="Classic ABAP Cloud app generation" width="100%"> 
 
 **Relevant sessions at SAP TechEd 2025:**

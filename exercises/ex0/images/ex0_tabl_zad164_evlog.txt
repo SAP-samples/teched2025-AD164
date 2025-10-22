@@ -1,0 +1,16 @@
+@EndUserText.label : 'Event Log'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zad164_evlog_### {
+
+  key client      : abap.clnt not null;
+  key log_uuid    : sysuuid_x16 not null;
+  travel_uuid     : sysuuid_x16 not null;
+  travel_id       : /dmo/travel_id not null;
+  overall_status  : /dmo/overall_status;
+  last_changed_at : abp_lastchange_tstmpl;
+  last_changed_by : abp_lastchange_user;
+
+}

@@ -20,12 +20,21 @@
 
 ## Create a connection to the ABAP system in ADT
 
-> Create an **ABAP Project** to connect your ADT client to the **SAP S/4HANA** or **SAP S/4HANA Cloud Private Edition** system.
+Complete one of the options below to connect your ADT client to the ABAP backend:
+- Option 1 — if you are working on **SAP S/4HANA** or **SAP S/4HANA Cloud Private Edition**.
+- Option 2 — if you are working in the public cloud, on **SAP BTP ABAP Environment** or **SAP S/4HANA Cloud Public Edition**.
+
+> [!IMPORTANT]  
+> Use **Option 1** for the hands-on workshops at **SAP TechEd Berlin 2025** and **ASUG Tech Connect 2025**. 
+  
+### Option 1: Create an ABAP Project in ADT
+
+> Complete the steps below in ADT if you are working on **SAP S/4HANA** or **SAP S/4HANA Cloud Private Edition**.
 
 <details>
   <summary>🔵 Click to expand!</summary>
    
-1. Go to ADT and open the **ABAP** perspective as shown in the screenshot below if not yet done.
+1. If not done already, open the **ABAP** perspective as shown in the screenshot below.
 
    ![Open ABAP Perspective](images/abap_perspective.png)
 
@@ -42,18 +51,38 @@
 </details>
 
 
+### Option 2: Create an ABAP Cloud Project 
+
+> Complete the steps below in ADT if you are working on **SAP BTP ABAP Environment** or **SAP S/4HANA Cloud Public Edition**.
+ 
+<details>
+  <summary>🔵 Click to expand!</summary>
+   
+1. If not done already, open the **ABAP** perspective as shown in the screenshot below.
+
+    ![Open ABAP Perspective](images/abap_perspective.png)
+
+2. If not done already, now create the **ABAP Cloud Project** as shown in the screenshots below. 
+  
+   For **step 4** in the screenshot below, you will either import or copy and paste the 🔑 **service key** of the SAP BTP ABAP environment system on which you'll be performing the exercises. Then click **_Next_** to continue.
+
+    ![Create ABAP Project Cloud 1/2](images/steampunk_systemlogon1.png)
+  
+   For **step 7** in the screenshot below, use the email and password of your ABAP user to log in to the system.
+  
+   You can keep the default **_Project name_** and click **_Finish_** to create the new ABAP Cloud Project in the **_Project Explorer_** view. 
+
+    ![Create ABAP Project Cloud 2/2](images/steampunk_systemlogon2.png)
+
+</details>
+
 ## Solution Packages
 [^Top of page](#)
 
-> Participants of SAP-led events, such as on-site SAP TechEd 2025 events, will find the solution packages **`ZAD164_SOL_ALV`** and **`ZAD164_SOL_RAP`** in the dedicated SAP S/4HANA system provided by SAP.
+Participants of SAP-led events, such as on-site SAP TechEd 2025 events, will find the solution packages **`ZAD164_SOLUTIONS_CLASSIC`** and **`ZAD164_SOLUTIONS_ABAP_CLOUD`** in the dedicated SAP S/4HANA system provided by SAP. You can take a look at the solutions, before you start with the implementation in your assigned exercise package. 
 
 <details>
   <summary>🔵 Click to expand!</summary>
-
-<br/>
-
-If you are attending one of the on-site SAP TechEd 2025 events, you can take a short look at the apps in the ABAP system, before you start with the implementation in your assigned exercise package. 
-<br/>
 
 **Classic ABAP: Classic ALV-based _Manage Travels_ app:**
 
@@ -62,54 +91,33 @@ If you are attending one of the on-site SAP TechEd 2025 events, you can take a s
 
 <details>
 <summary>🖼️Click to expand!</summary>
-  <br/><img src="../images/travelapp_alv_sol01a.png" alt="Classic ABAP - Manage Travels App - Package" width="100%"> 
-  
-  <br/><img src="../images/travelapp_alv_sol01.png" alt="Classic ABAP - Manage Travels App" width="100%"> 
+<img src="../images/travelapp_alv_sol01.png" alt="Classic ABAP - Manage Travels Ap" width="100%"> 
 </details>
 
-<br/>
-
-**ABAP Cloud: Fiori elements-based _Manage Travels_ app built with RAP:**
+**ABAP Cloud: RAP-based _Manage Travels_ app:**
 
 - Package name: **`ZAD164_SOL_RAP`**
 - Service binding: **`ZAD164_UI_TRAVEL_O4_RAP`**
 
 <details>
 <summary>🖼️Click to expand!</summary>
-  <br/><img src="../images/travelapp_rap_sol01a.png" alt="ABAP Cloud - Manage Travels App - Package" width="100%"> 
-
-  <br/><img src="../images/travelapp_rap_sol01.png" alt="ABAP Cloud - Manage Travels App" width="100%"> 
+<img src="../images/travelapp_rap_sol01.png" alt="ABAP Cloud - Manage Travels App" width="100%"> 
 </details>
 
-<!--
 **ABAP Cloud: RAP-based _Manage Travels_ app (extended version):**
 
-This version of the _Manage Travels_ app includes various RAP capabilities, that are not covered in the exercises due to time restrictions.
+This version of the _Manage Travels_ app includes various RAP capabilities, that are not covered in the exercises due toi time restrictions.
 
 - Package name: **`ZAD164_SOL_RAP_EXT`**
 - Service binding: **`ZAD164_UI_TRAVEL_O4_EXT`**
--->
 
 </details>
 
+
 ## Group ID (Suffix)
 [^Top of page](#)
 
-You've been assigned a unique, 3-digit group ID, which you will use as **suffix** throughout the exercises to replace all occurrences of **`###`** in development artifact names and provided code snippets.
- 
-The suffix is used to uniquely identify your repository artefacts and distinguish them from those of other users working on the same system. 
-
-> [!NOTE]  
-> In the course of these exercises you will frequently see the task to "_replace the placeholder **`###`** with your personal suffix_", where *###* is your assigned suffix.
-> 
-> For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.   
-> <img src="images/find01.png" alt="find and replace" width="40%">
-   
-<!--
-## Group ID (Suffix)
-[^Top of page](#)
-
-In this exercise step, you will define a group ID, which will be use as **suffix** throughout this workshop to uniquely identify your repository artefacts and distinguish them from those of other users working on the same system. 
+In this exercise step, you will define a group ID, which will be use as **suffix** throughout this workshop to uniquely identify your repository artefacts and distinguish them from those of other users working on the same system.
 
 > [!NOTE]  
 > Attendees of **on-site SAP-led events**, such as SAP TechEd 2025, will be assigned a group ID by the SAP team, which should be used as **suffix**. They can therefore skip this section and proceed directly with the next one: _Your Exercise Package_.
@@ -136,59 +144,36 @@ Once you've found an available group ID, choose **Cancel**.
 <img src="images/groupid01.png" alt="determine group id" width="40%">
 
 </details>
--->
 
 ## Your Exercise Package
 [^Top of page](#)
 
-> **For on-site attendees of SAP TechEd 2025 events and ASUG Tech Connect 2025**:    
-> You'll use the development package **`ZAD164_EX_###`**, where **`###`** is your personal suffix (_group ID_), to complete the exercises of this hands-on workshop. 
+Use the development package **`ZAD164_EX_###`**, where **`###`** is your personal suffix (_group ID_), to complete the exercises of this hands-on workshop.
 
-<details>
-  <summary>🔵Click to expand!</summary>
-  <br/>
-  
-  Due to time constraints, **attendees of on-site SAP TechEd 2025 events or ASUG Tech Connect 2025** will use pre-generated exercise packages and database tables for storing travel data (`ZAD164_TRVL_###`), booking data (`ZAD164_BOOK_###`), and event data (`ZAD164_EVLOG_###`). These development objects provide the starting points of the exercises.  
+Due to time constraints, we've already generated the exercise packages and the database tables for storing travel data (`ZAD164_EVLOG_###`), booking data (`ZAD164_BOOK_###`), and event data (`ZAD164_EVLOG_###`). These development objects provide the starting points of the exercises. 
 
-  _Travel_ and _booking_ demo data can be filled in the relevant tables by executing (**F9**) the class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** which is also provided. 
-  
-1. Generate _Travel_ and _Booking_ demo data in the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**, respectively.
+Travel and booking demo data can be filled in the relevant tables by executing (**F9**) the class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`**. 
 
-   To do this, open the ABAP class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`**, where **`###`** is your personal suffix, and execute the class by pressing **F9**.
-
-   As a result, the message *`Data generation successfull`* will appear in the ADT **_Console_** view. 
-
-   <img src="images/generate_demo_data01.png" alt="Generate demo data" width="80%">  
-
-<!--   
-2. You can check the result of the class run for the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**.
-
-   To do this, simply open each database table by double clicking on it and press **F8** to start the **_Data Preview_**.
-
-   <img src="images/generate_demo_data02.png" alt="Generate demo data" width="80%"> 
--->
- 
-</details>
-
-<!--
-> [!IMPORTANT] 
-> **FOR THE SELF-PACE MODE**:    
+> [!NOTE] 
 > If you don't have access to a prepared ABAP system provided by SAP, you'll need to **create your own exercise package and a few development objects** before starting with the first exercise. Follow the instructions provided below to do so.
+> 
 > <details>
 > <summary>Click to expand!</summary>
 >     
 > Create the development objects below in your system. 
 >  
-> Replace all occurrences of the placeholder **`###`** in the provided source code with your personal suffix. 
-> You can make use of _**Find and Replace**_ feature (**Ctrl+F**) in ADT to do this.
+> Replace all occurrences of the placeholder **`###`** in the provided code snippets with your personal suffix. 
+> You can use the ADT function _**Find and Replace**_ (**Ctrl+F**) to do this.
 >    
 > 1. Create the development package ![ ](../images/adt_package.png)**`ZAD164_EX_###`** with **`ZLOCAL`** as super package ("_ABAP for Cloud development_" as language version). 
-> 2. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_TRVL_###`** in package **`ZAD164_EX_###`** – for storing the travel data ([📄source code](images/ex0_tabl_zad164_trvl.txt)).
-> 3. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_BOOK_###`** in package **`ZAD164_EX_###`** – for storing the booking data ([📄source code](images/ex0_tabl_zad164_book.txt)).
-> 4. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_EVLOG_###`** in package **`ZAD164_EX_###`** – for storing the event data ([📄source code](images/ex0_tabl_zad164_evlog.txt)).
-> 5. Create the global class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** in package **`ZAD164_EX_###`** – for generating demo travel and booking data ([📄source code](images/ex0_class_zcl_ad164_fill_tables.txt)).
-> </details>
--->
+> 2. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_TRVL_###`** – for storing the travel data ([📄source code](images/ex0_tabl_zad164_trvl.txt)).
+> 3. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_BOOK_###`** – for storing the booking data ([📄source code](images/ex0_tabl_zad164_book.txt)).
+> 4. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_EVLOG_###`** – for storing the event data ([📄source code](images/ex0_tabl_zad164_evlog.txt)).
+> 5. Create the global class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** – for generating demo travel and booking data ([📄source code](images/ex0_class_zcl_ad164_fill_tables.txt)).
+
+</details>
+
+<!--
 
 ## Working with Github
 [^Top of page](#)
@@ -198,9 +183,18 @@ Here are a few tips to complete this exercise on GitHub.
 <details>
   <summary>🔵 Click to expand!</summary>
   
-  <img src="images/git_working01.png" alt="Working with GitHub" width="100%"> 
+  **Use the outline**  
+  🚧
+
+  **Use the _Copy Raw Content_ function**  
+  🚧
+
+  **???**  
+  🚧
 
 </details>
+
+-->
 
 ## Helpful Information
 [^Top of page](#)
@@ -215,7 +209,7 @@ In the course of these exercises you will frequently see the task to "_replace t
 
 For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.
   
-<img src="images/find01.png" alt="find and replace" width="50%">
+ ![find and replace](images/find01.png)
    
 Choosing **Replace All** allows you to replace all occurrences of **`###`** with your assigned suffix.
 
@@ -230,14 +224,13 @@ The modern, declarative, and expression-oriented ABAP language syntax will be us
 > **Find more information in the ABAP Keyword Documentation**: [ABAP - Programming Language](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenabap_reference.htm) 
   
 ### Useful ADT Shortcuts
-Below are some useful ADT keyboard shortcuts for the ABAP development in Eclipse. More useful ADT shortcuts can be found on the [SAP Help Portal documentation](https://help.sap.com/docs/abap-cloud/abap-development-tools-user-guide/keyboard-shortcuts-for-abap-development).
-
-When working in the ABAP Development Tools for Eclipse, you can display the full list of available shortcuts in the **Show Key Assit** in ADT by pressing **Ctrl+Shift+L**.
-
-> [!NOTE]  
-> When working on a Mac notebooks, use the **_Command_** (**Cmd**) instead of the **_Control_** key (**Ctrl**) used on Windows devices.
+Here are some useful ADT keyboard shortcuts for the ABAP development in Eclipse.
 
 ![ADT Shortcuts](images/adt_shortcuts.png)
+
+More useful ADT shortcuts can be found here: [Link](https://blogs.sap.com/2013/11/21/useful-keyboard-shortcuts-for-abap-in-eclipse/).
+
+> **Info**: You can display the full list of available shortcuts in the **Show Key Assit** in ADT by pressing **Ctrl+Shift+L**.
  
 </details>
 
@@ -248,4 +241,4 @@ Now you've familiarized yourself with the solutions and your exercise package `Z
 
 Continue with the next exercise — **[Exercise 1: Define the base BO data model](../ex01/README.md)**.
 
----
+--

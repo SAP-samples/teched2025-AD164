@@ -1,0 +1,23 @@
+@EndUserText.label : 'Booking Data'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zad164_book_### {
+
+  key client            : abap.clnt not null;
+  key booking_uuid      : sysuuid_x16 not null;
+  parent_uuid           : sysuuid_x16;
+  booking_id            : /dmo/booking_id not null;
+  booking_date          : /dmo/booking_date;
+  customer_id           : /dmo/customer_id;
+  carrier_id            : /dmo/carrier_id;
+  connection_id         : /dmo/connection_id;
+  flight_date           : /dmo/flight_date;
+  @Semantics.amount.currencyCode : 'zad164_book_###.currency_code'
+  flight_price          : /dmo/flight_price;
+  currency_code         : /dmo/currency_code;
+  booking_status        : /dmo/booking_status;
+  local_last_changed_at : abp_locinst_lastchange_tstmpl;
+
+}

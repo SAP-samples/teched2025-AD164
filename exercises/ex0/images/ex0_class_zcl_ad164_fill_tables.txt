@@ -1,0 +1,36 @@
+CLASS zcl_ad164_fill_tables_### DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_ad164_fill_tables_### IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA itab_t TYPE STANDARD TABLE OF zad164_trvl_###.
+    DATA itab_b TYPE STANDARD TABLE OF zad164_book_###.
+
+    DELETE FROM zad164_trvl_###.
+    DELETE FROM zad164_book_###.
+    DELETE FROM zad164_evlog_###.
+
+    SELECT * FROM /dmo/a_travel_d INTO CORRESPONDING FIELDS OF TABLE @itab_t.
+    INSERT zad164_trvl_### FROM TABLE @itab_t.
+
+    SELECT * FROM /dmo/a_booking_d INTO CORRESPONDING FIELDS OF TABLE @itab_b.
+    INSERT zad164_book_### FROM TABLE @itab_b.
+
+    COMMIT WORK.
+
+    out->write( 'Travel and booking data generation successful.' ).
+  ENDMETHOD.
+
+ENDCLASS.

@@ -43,7 +43,7 @@ To complete the practical exercises in this repository, you need the **latest _A
 If you do not have access to SAP-owned systems and laptops, please follow the steps below.
 
 <details>
-<summary>ℹ️Click to expand!</summary>
+<summary>🔵Click to expand!</summary>
 
 <br/>
 

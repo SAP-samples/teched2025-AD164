@@ -134,7 +134,7 @@ The ABAP development tools for Eclipse provide various standard and AI-based ABA
 
 | Demos | -- |
 | ------------- |  -- |
-| [Demo – Use the ABAP Cloud generators to create RAP-based UI services](demo/README.md)| -- |
+| [Demo – Use the ABAP Cloud generators to create RAP-based UI services](exercises/demo/README.md)| -- |
 
 
 #### Exercise Block C (Optional)

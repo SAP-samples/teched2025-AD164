@@ -38,11 +38,14 @@ The ABAP Development Tools for Eclipse (ADT) offers **standard ABAP Cloud genera
   <img src="images/standard_abapcloud_generator01.gif" alt="Classic ABAP Cloud app generation" width="100%"> 
 </details>
 
-**Relevant sessions at SAP TechEd 2025:**
+**Relevant content**
+-  Hands-on Workshop: [RAP100 – Build Fiori Apps with the ABAP RESTful Application Programming Model (RAP) ](https://github.com/SAP-samples/abap-platform-rap100/blob/main/README.md)
 
+<!--
+**Relevant sessions at SAP TechEd 2025:**
 -  Deep Dive: [AD201 – Explore ABAP Cloud in SAP Build - what's in for ABAP developers?](https://community.sap.com/t5/technology-blog-posts-by-sap/abap-cloud-sessions-at-sap-teched-in-2025/ba-p/14175995#:~:text=AD201%20%E2%80%93%20Explore%20ABAP%20Cloud%20in%20SAP%20Build%20%2D%20what%27s%20in%20for%20ABAP%20developers%3F%C2%A0%20%C2%A0)
 -  Hands-on Workshop: [AD163 – Fusion Development with ABAP Cloud in SAP Build](https://www.sap.com/events/teched/berlin/flow/sap/te25/catalog-inperson/page/catalog/session/1749072760273001q6Pm)
-
+-->
 
 ## Next
 

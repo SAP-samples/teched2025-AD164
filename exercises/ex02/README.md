@@ -6,7 +6,7 @@
 
 In the previous exercise you've defined the data model (or _composition model_) of the base _Travel_ BO (_[Exercise 1](../ex01/README.md)_).
 
-In this exercise, you'll define the consumption layer of the use-case-specific BO projection (aka _service projection_) by projecting the part of the _Travel_ base BO data model (_Travel_ and _Booking_ entities) that is relevant for this scenario — namely the _Manage Travels_ App —, and enrich it as needed - e.g., with additional elements, value helps, enterprise search enablement, and more. The CDS projection views used to define the BO projection data model are commonly referred to as **_projection views_**.
+In this exercise, you'll define the consumption layer of the use-case-specific BO projection (aka _service projection_) by projecting the part of the _Travel_ base BO data model (_Travel_ and _Booking_ entities) that is relevant for this scenario — namely the _Manage Travels_ app —, and enrich it as needed - e.g., with additional elements, value helps, enterprise search enablement, and more. The CDS projection views used to define the BO projection data model are commonly referred to as **_projection views_**.
 
 To do this, you'll create two CDS projection view entities – ![ ](../images/adt_ddls.png)`ZAD164_C_Travel_###` for the _Travel_ entity and ![ ](../images/adt_ddls.png)`ZAD164_C_Booking_###` for the _Booking_ entity – for the specific use case on top of the respective base BO view entities created in the previous exercise, i.e. ![ ](../images/adt_ddls.png)`ZAD164_C_Travel_###` and ![ ](../images/adt_ddls.png)`ZAD164_R_Booking_###`, where `###` is your personal suffix. 
 

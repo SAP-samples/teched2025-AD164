@@ -28,21 +28,27 @@ CLASS ZCL_AD164_EML_### IMPLEMENTATION.
     "Helper Travel_UUID for which we are not authorized
     SELECT SINGLE travel_uuid FROM zad164_trvl_### WHERE agency_id = '070035' INTO @DATA(travel_uuid).
 
+    "Read data via CDS views
     cds_read_none_privileged( out ).
     cds_read_with_privileged( out ).
 
     out->write( |-----------------------------------------------------------------------------------| ).
 
+    "Read data via EML
     eml_read_none_privileged( out = out  travel_uuid = travel_uuid ).
     eml_read_with_privileged( out = out  travel_uuid = travel_uuid ).
 
     out->write( |-----------------------------------------------------------------------------------| ).
 
+    "Modify data via EML
     eml_modify_none_privileged( out = out  travel_uuid = travel_uuid ).
     eml_modify_with_privileged( out = out  travel_uuid = travel_uuid ).
 
     "Undo all changes.
     ROLLBACK ENTITIES.
+
+    "Commit all changes.
+*    COMMIT ENTITIES.
 
   ENDMETHOD.
 

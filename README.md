@@ -71,29 +71,31 @@ In this hands-on workshop, we'll guide you through the development of a transact
 
 <br/>
     
-**The business context for the scenario is as follows:**    
+**The business context for the scenario is as follows:**     
 
 The department responsible for managing worldwide Travels for multiple Agencies is requesting you to build a new SAP Fiori app, _Manage Travels_, with different capabilities to process travel bookings. More information on the scenario and the app will be given throughout the exercises. 
 
-**Resulting apps:**   
-
+✈️ **Starting point:**     
 Below is an illutrastionn of the ALV-based _Manage Travels_ app built with **classic ABAP**:  
 <details>
-<summary>🖼️Click to expand!</summary>
+<summary>Click to expand!</summary>
 <img src="exercises/images/travelapp_alv_sol01.png" alt="Classic ABAP - Manage Travels Ap" width="100%"> 
 </details>
 
+<br/>
+
+🏁 **Resulting app:**     
 Below is an illutrastion of the RAP-based  _Manage Travels_ app built with **ABAP Cloud**:
-<details>
-<summary>🖼️Click to expand!</summary>
-<img src="exercises/images/travelapp_rap_sol01.png" alt="ABAP Cloud - Manage Travels App" width="100%"> 
-</details>
+    <details>
+    <summary>Click to expand!</summary>
+    <img src="exercises/images/travelapp_rap_sol01.png" alt="ABAP Cloud - Manage Travels App" width="100%"> 
+    </details>
 
 The OData service you are going to implement is based on the simplified _Flight_ data model below.
-<details>
-<summary>🖼️Click to expand!</summary>
-<img src="exercises/images/ad164_datamodel01.png" alt="Simplified Flight Data Model" width="100%"> 
-</details>
+    <details>
+    <summary>Click to expand!</summary>
+    <img src="exercises/images/ad164_datamodel01.png" alt="Simplified Flight Data Model" width="80%"> 
+    </details>
 
 </details>
 

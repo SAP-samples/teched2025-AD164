@@ -133,7 +133,7 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
 
 5. Go ahead and play around with class.
    
-   You can reset your changes anytime using the provided source code (🟡📄).
+   💡 You can reset your changes at any time using the provided source code (🟡📄).
    
    🟡📄 **Source code document**: ![class icon](../images/adt_class.png)[ABAP Class: ZCL_AD164_EML_###](images/EX10_CLASS_ZCL_AD164_EML.txt)
            

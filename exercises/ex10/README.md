@@ -13,8 +13,8 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
 
 **Exercise steps:**
 
-- [Exercise 10.1: Create the EML playground class](#exercise-101-create-the-abap-class)
-- [Exercise 10.2: Play around and get familiar with EML](#exercise-102-play-around-and-get-familiar-with-eml)
+- [Exercise 10.1: Create the EML playground class](#exercise-101-create-the-eml-playground-class)
+- [Exercise 10.2: Test the EML playground class](#exercise-102-test-the-eml-playground-class)
 - [Summary](#summary)
 
 > [!TIP]
@@ -69,10 +69,9 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
    > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
      
    🟡📄 **Source code document**: ![class icon](../images/adt_class.png)[ABAP Class: ZCL_AD164_EML_###](images/EX10_CLASS_ZCL_AD164_EML.txt)
+4. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the class.
 
-5. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the class.
-
-6. Brief explanation of the different methods in ![ ](../images/adt_class.png)**`ZCL_AD164_EML_###`**
+5. Brief explanation of the different methods in ![ ](../images/adt_class.png)**`ZCL_AD164_EML_###`**
 
    <img src="images/ad164_10_emlpg01.png" alt="EML Playground" width="30%">
    
@@ -88,134 +87,36 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
    | ◈ |   |
    | **`EML_MODIFY_NONE_PRIVILEGED`** | Method for modifying data via an EML _modify_ operation **without** _privileged_ mode. |
    | **`EML_MODIFY_WITH_PRIVILEGED`** | Method for modifying data via an EML _modify_ operation **with** _privileged_ mode. |
-	   
+
+       
 </details>
 
-## Exercise 10.2: Play around and get familiar with EML 
 
+## Exercise 10.2: Test the EML playground class
 
-### Exercise 10.2.1: Read data via CDS views
-
-> Read data via CDS views with and without _privileged_ model. 
+> Now you can test the EML playground class ![class icon](../images/adt_class.png)`ZCL_AD164_EML_###` and explore the Entity Manipulation Language (EML).  
 
 <details>
   <summary>🔵Click to expand!</summary>   
-
-1. Review the implementation of the method **`if_oo_adt_classrun~main`**. At this stage only the methods **`cds_read_none_privileged`** and **`cds_read_with_privileged`** are called.
-     
-   To test the difference between the call with and without _privileged_ mode, **`070035`** is used as Agency ID. You are not authorized to access this data in _normal_ mode due to the authorizations defined in the PFCG role **`ZAD164`**.
-   
-   > 💡 You can navigate (**F3**) to the method implementations of **`cds_read_none_privileged`** and **`cds_read_with_privileged`** and take a closer look at it.
-
-   <img src="images/ad164_1021_emlpg02.png" alt="EML Playground" width="60%">   
-
-3. Press **F9** to run the class in the _**Console**_ view. 
-   
-   The result of the class run will appear. You can reapeat it. More data is retrieved with the _privileged_ mode.
-
-   > 💡 You can always use the _**clear**_ button in _Console_ toolbar to clear it.
-
-   <img src="images/ad164_1021_emlpg03.png" alt="EML Playground" width="80%">
-
-</details>
-
-
-### Exercise 10.2.2: Read data via EML
-
-> Read data via EML statements with and without _privileged_ model 
-
-<details>
-  <summary>🔵Click to expand!</summary>   
-
-1. Go to the implementation of the method **`if_oo_adt_classrun~main`** and comment in by removing **`*`** at the beginning of the code lines below:
-
-   <pre langu="ABAP"> 
-    "Read data via EML
-    eml_read_none_privileged( out = out  travel_uuid = travel_uuid ).
-    eml_read_with_privileged( out = out  travel_uuid = travel_uuid ).
-    out->write( |-----------------------------------------------------------------------------------| ).
-   </pre>
-   
-   <img src="images/ad164_1022_emlpg04.png" alt="EML Playground" width="60%">
-   
-2. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the changes.
-
-   > 💡 You can navigate (**F3**) to the method implementations of **`eml_read_none_privileged`** and **`eml_read_with_privileged`** and take a closer look at it.
-
-3. Press **F9** to run the enhanced class in the _**Console**_ view. 
-   
-   The result of the class run will appear. You can re-run the class anytime with **F9**. Remember that you can always use the _clear_ button in _Console_ toolbar to clear it.
-
-   The EML _read_ call without _privileged_ mode retrieved no data because of the unauthorized Agency ID used (**`070035`**). 
-
-   <!-- <img src="images/ad164_1022_emlpg05.png" alt="EML Playground" width="80%"> -->
-   <img src="images/ad164_1022_emlpg05b.png" alt="EML Playground" width="80%">
-
-</details>
-
-
-### Exercise 10.2.2: Modify data via EML
-
-> Modify data via EML statements with and without _privileged_ model 
-
-<details>
-  <summary>🔵Click to expand!</summary>   
-
-1. Go to the implementation of the method **`if_oo_adt_classrun~main`** and comment in by removing **`*`** at the beginning of the code lines below:
-
-   <pre langu="ABAP"> 
-    "Modify data via EML
-    eml_modify_none_privileged( out = out  travel_uuid = travel_uuid ).
-    eml_modify_with_privileged( out = out  travel_uuid = travel_uuid ).
-
-    "Undo all changes.
-    ROLLBACK ENTITIES.
-   </pre>
-   
-   <img src="images/ad164_1023_emlpg06.png" alt="EML Playground" width="70%">
-   
-2. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the changes.
-
-   > 💡 You can navigate (**F3**) to the method implementations of **`eml_modify_none_privileged`** and **`eml_modify_with_privileged`** and take a closer look at it.
-
-3. Press **F9** to run the enhanced class in the _**Console**_ view. **Repeat** the class execution (**F9**).
-   
-   The result of the class run will appear. Re-run the class anytime with **F9**.
-
-   The EML _modify_ call with or without _privileged_ mode provide the same result. 
-
-   > 🟠 You may have noticed that the values of the fields **`BookingFee`** and **`TotalPrice`** remain unchanged, event after executing the EML _modify_ methods `EML_MODIFY_NONE_PRIVILEGED` and `EML_MODIFY_WITH_PRIVILEGED`. Let's address this issue in the next step.
-
-   <img src="images/ad164_1023_emlpg07b.png" alt="EML Playground" width="80%">
-
-4. To persits authorized data changes resulting von  EML modify statements, a **`COMMIT ENTITIES`** statement must be executed after the statements.
-  
-   Currently a **`ROLLBACK ENTITIES`** statement is called after the methods **`EML_MODIFY_NONE_PRIVILEGED`** and **`EML_MODIFY_WITH_PRIVILEGED`**.
-
-   Do the following changes in the source code:
-   - comment out the statement **`ROLLBACK ENTITIES.`** by adding **`*`** at the beginning of the code line or pressing **Ctrl+<**, and
-   - comment in **`COMMIT ENTITIES.`** by removing **`*`** at the beginning of the code line or pressing **Ctrl+>** (or **Ctrl+Shift+<**.)
-
-   <img src="images/ad164_1023_emlpg08.png" alt="EML Playground" width="60%">
-  
-5. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the changes.
-
-6. Execute (**F9**) the updated class **at least two times** and check the results in the _**Console**_ view. 
-   
-   The result of the class run will appear. The EML _modify_ call with _privileged_ mode has now been executed and the value of the fields **`BookingFee`** and **`TotalPrice`** is now updated.
-
-   <img src="images/ad164_1023_emlpg09b.png" alt="EML Playground" width="80%">
-
-5. Go ahead and play around with class.
-   
-   💡 You can reset your changes at any time using the provided source code (🟡📄).
-   
-   🟡📄 **Source code document**: ![class icon](../images/adt_class.png)[ABAP Class: ZCL_AD164_EML_###](images/EX10_CLASS_ZCL_AD164_EML.txt)
-
-
-</details>
-
  
+1. Open the  ![class icon](../images/adt_class.png)`ZCL_AD164_EML_###` and press **F9** to run the it as _**ABAP Application (Console)**_.
+  
+   The result of the class run will appear in the _**Console**_ view. 
+   
+   > 💡 You can always use the _**clear**_ button in _Console_ toolbar to clear it.
+   > 🔍 You can navigate (**F3**) to the different method implementations and take a closer look at it.
+
+   <img src="images/ad164_102_emlpg01b.png" alt="EML Playground" width="80%">
+
+2. Play around by commenting in (**Ctrl+<**) and commenting out (**Ctrl+>**) the different sections (1, 2, and, 3), and executing the class (**F9**).
+   
+   You can also use the **ABAP Debugger** to see what happens in the respective method implementations.
+
+   <img src="images/ad164_102_emlpg01c.png" alt="EML Playground" width="80%">
+       
+</details>
+
+
 ## Summary
 
 Congratulations!🎉 You've now completed the optional exercises of this hands-on workshop as well!

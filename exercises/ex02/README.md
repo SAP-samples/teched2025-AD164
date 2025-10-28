@@ -26,8 +26,8 @@ To do this, you'll create two CDS projection view entities – ![ ](../images/ad
 > [!NOTE]
 > **About the naming conventions used in this workshop:**    
 > The main aspects of the naming conventions in the [Virtual Data Model (VDM) of SAP S/4HANA](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/8a8cee943ef944fe8936f4cc60ba9bc1.html) are applied in this workshop, for example:
-> - `<namespace>R_`:  Prefix used for CDS artifacts of the base BOs (restricted reuse layer)
-> - `<namespace>C_`: Prefix used for CDS artifacts of the BO projections (consumption layer)  
+> - **`<namespace>R_`**:  Prefix used for CDS artifacts of the base BOs (restricted reuse layer)
+> - **`<namespace>C_`**: Prefix used for CDS artifacts of the BO projections (consumption layer)  
 ---
 
 ## Exercise 2.1:	Create the _Travel_ projection view 
@@ -52,7 +52,7 @@ To do this, you'll create two CDS projection view entities – ![ ](../images/ad
 
    The skeleton data definition of the projection view is now displayed in the editor. All fields of the underlying base view have been automatically exposed in the **`select`** list.
    
-   <img src="images/ad164_21_pv01.png" alt="BO projection view" width="70%">
+   <img src="images/ad164_21_pv01.png" alt="BO projection view" width="50%">
 
    Now proceed to adjust the generated data definition.
 

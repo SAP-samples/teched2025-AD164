@@ -22,10 +22,25 @@ To do this, you will first define the data model of the _Travel_ and _Booking_ e
 > - [Useful Keyboard Shortcuts for ABAP Development](https://help.sap.com/docs/ABAP_PLATFORM_NEW/c238d694b825421f940829321ffa326a/4ec299d16e391014adc9fffe4e204223.html?version=latest) (ADT shortcuts)
 
 > [!NOTE]
+> **ABAP Core Data Services (CDS)** provide the gold standard for data modeling in the ABAP Cloud development model, supporting the development of analytical and transactional applications, enterprise search models, and integration scenarios. Working with ABAP Cloud inherently involves using ABAP CDS.
+> 
+> <details>
+>  <summary>Click to expand!</summary>  
+>   
+> ABAP CDS provides a data modelling infrastructure for defining advanced, semantically rich data models and for easy access to SAP HANA libraries and features.
+> Its data definition language (DDL) has been enhanced to natively support the definition of the composition model and transactional behavior of business objects built with the ABAP RESTful application programming model (RAP). ABAP CDS comprises its own data control language (DCL) to protect data against unauthorized access.     
+> 
+>   
+> ABAP CDS is available in SAP S/4HANA Cloud, SAP S/4HANA, and SAP BTP ABAP environment - as well as in SAP NetWeaver 7.4 and later.    
+>  
+> Learn more: [ABAP Data Models Guide - SAP Help](https://help.sap.com/docs/btp/abap-data-models/abap-data-models) | [ABAP CDS - Keyword Documentation - SAP Help](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds.htm)
+>  </details>
+
+> [!NOTE]
 > **About the naming conventions used in this workshop**   
 > The main aspects of the naming conventions in the [Virtual Data Model (VDM) of SAP S/4HANA](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/8a8cee943ef944fe8936f4cc60ba9bc1.html) are applied in this workshop, for example:
-> - `<namespace>R_`: Prefix used for CDS artifacts of the base BOs (restricted reuse layer)
-> - `<namespace>C_`: Prefix used for CDS artifacts of the BO projections (consumption layer)
+> - **`<namespace>R_`**: Prefix used for CDS artifacts of the base BOs (restricted reuse layer)
+> - **`<namespace>C_`**: Prefix used for CDS artifacts of the BO projections (consumption layer)
 
 ---
 
@@ -119,7 +134,7 @@ To do this, you will first define the data model of the _Travel_ and _Booking_ e
     >    - `_Customer` – describing the relation to customer data
     >    - `_Overall_Status` – describing the relation to overall status data (value help) 
     >    - `_Currency` – describing the relation to currency data (value help)
-    > - (3) Curency code `CurrencyCode` is specified as reference field for amount fields `BookingFee` and `TotalPrice` in the `select` list by adding the element annotation `@Semantics.amount.currencyCode: 'CurrencyCode` directly before these elements:  
+    > - (3) Currency code `CurrencyCode` is specified as reference field for amount fields `BookingFee` and `TotalPrice` in the `select` list by adding the element annotation `@Semantics.amount.currencyCode: 'CurrencyCode` directly before these elements:  
     > - (4) To allow the RAP frameworks to fully managed the administrative fields at runtime, appropriate `@Semantics` annotations are specified before them: `LocalCreatedBy`, `LocalCreatedAt`, `LocalLastChangedBy`, `LocalLastChangedAt`, and `LastChangedAt`.   
        
    </details>

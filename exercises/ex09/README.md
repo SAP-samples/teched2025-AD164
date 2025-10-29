@@ -253,7 +253,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
    <details>
      <summary>🖼️Click to expand!</summary>
-     <img src="images/ad164_91_fullcrud02.png" alt="CRUD Enablement" width="80%">
+     <img src="images/ad164_92_fullcrud03.png" alt="CRUD Enablement" width="80%">
    </details>  
 
 4. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
@@ -276,40 +276,10 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    
  2. Now, go ahead and try to create new _travel_ and _booking_ records, and edit or delete existing ones. 
     
-      <img src="images/ad164_93_fullcrud03.png" alt="CRUD Enablement" width="80%">  
+     <!-- <img src="images/ad164_93_fullcrud04.png" alt="CRUD Enablement" width="80%">  -->
         
 </details> 
 
-
-<!--
-
-## Exercise 9.4: Extended _Manage Travels_ app
-
-> Start the extended _Manage Travels_ app in the solution package ![ ](../images/adt_package.png)`ZAD164_SOL_RAP_EXT`.
-> 
-> Various RAP features are implemented in the extended _Manage Travels_ app – such as [validations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/validations?version=Cloud), [determinations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/determinations?version=Cloud), and [(event-driven) side effects](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/side-effects?version=Cloud). You can learn more about
-> the implementation of this app in the [RAP Development Guide](https://help.sap.com/docs/abap-cloud/abap-rap/developing-transactional-apps-with-draft-capabilities?version=sap_btp).
-
-<details>
-  <summary>🔵Click to expand!</summary>   
- 
- 1. Add the solution package ![ ](../images/adt_package.png)**`ZAD164_SOL_RAP_EXT`** to your **Favorite Packages** folder in the _Relation Explorer_.
-    
- 2. Navigate to the sub-folder **Business Services** > **Service Bindings** and double-click the service binding ![ ](../images/adt_srvb.png)**`ZAD164_UI_TRAVEL_O4_EXT`**.
-
- 3. In the service binding, select the leading entity (![ ](../images/adt_ddls_lead.png)), **_Travel_** in the ***Entity Set and Association*** area, and either right-click it and choose _Open Fiori elements App preview_ from the context menu, or choose the Preview button, simply double-click it to start the Fiori elements app preview in the browser.
-     
-    <img src="images/ad164_94_fullcrud04.png" alt="CRUD Enablement" width="80%"> 
-    
-  4. Click the **Go** button (![ ](../images/icon_go.png)) to load the data and play around with the extended app.
-
-  5.  You can also take a look at the behavior definition of the base _Travel_ BO ![ ](../images/adt_bdef.png)**`ZAD164_R_TRAVEL_EXT`** and the _Travel_ BO projection ![ ](../images/adt_bdef.png)**`ZAD164_C_TRAVEL_EXT`**.
-    
-    💡 Feel free to ask questions to the SAP experts available in the room.
-        
-</details> 
-
--->
 
 ## Summary & Next exercise
 

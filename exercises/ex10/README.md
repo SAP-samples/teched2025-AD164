@@ -1,4 +1,4 @@
-# \[Optional\] Exercise 10: Working with the Entity Manipulation Language (EML)
+# \[Optional\] Exercise 10: Exploring the Entity Manipulation Language (EML)
 
 > [!NOTE] 
 > **This exercise is optional.**
@@ -7,7 +7,7 @@
 
 In the previous exercise, you've enhanced the Travel BO to support full transactional behavior – that is full create, update, and delete operations, and enable draft handling to temporarily store transient data until it is persisted in the database – [Exercise 9](../ex09/README.md). 
 
-In this exercise, you will explore how to use the Entity Manipulation Language (EML) to consume – that is, read, update, create, and delete – instances of the _Travel_ BO via APIs from outside the RAP BO as well as outside of the RAP context. You will create the ABAP class `ZCL_AD164_EML_###` which contains sample access implementations via the EML APIs to the Travel BO is provided for the purpose. 
+In this exercise, you will explore how to use the Entity Manipulation Language (EML) to consume – that is, read, update, create, and delete – instances of the _Travel_ BO via APIs from outside the RAP BO as well as outside of the RAP context. You will create the ABAP class `ZCL_AD164_EML_###` which contains sample access implementations via the EML APIs to the Travel BO. 
 
 You will have the opportunity to test the _privileged mode_ enabled in [_Exercise 8_](../ex08/README.md).
 
@@ -31,7 +31,7 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
 > The Entity Manipulation Language (EML) is an extension of the ABAP language which offers a type-safe, API-based access to RAP business objects directly by using ABAP. EML has an SQL-like syntax. 
 > 
 > EML is used to implement the transactional behavior of RAP BOs and also access existing RAP BOs from outside the RAP context.  
-> EML interacts with business objects by triggering their operations for specified entities. An operation can only be triggered by EML if the operation is specified for the relevant entity in the behavior definition and if it implemented accordingly.
+> EML interacts with business objects by triggering their operations for specified entities. An operation can only be triggered by EML if the operation is specified for the relevant entity in the behavior definition and if it is implemented accordingly.
 > 
 > When consuming a RAP BO instance via EML, the consumer application is responsible for triggering the `COMMIT` operation after `MODIFY` statement to persist the changes temporary stored in the transactional buffer to the SAP HANA database.
 > 
@@ -106,7 +106,7 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
    > 💡 You can always use the _**clear**_ button in _Console_ toolbar to clear it.
    > 🔍 You can navigate (**F3**) to the different method implementations and take a closer look at it.
 
-   <img src="images/ad164_102_emlpg01b.png" alt="EML Playground" width="80%">
+   <img src="images/ad164_102_emlpg01b.png" alt="EML Playground" width="100%">
 
 2. Play around by commenting in (**Ctrl+<**) and commenting out (**Ctrl+>**) the different sections (1, 2, and, 3), and executing the class (**F9**).
    
@@ -121,6 +121,6 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
 
 Congratulations!🎉 You've now completed the optional exercises of this hands-on workshop as well!
 
-Return to **[Home - AD164](../README.md)**
+Return to **[Home - AD164](../../README.md)**
 
 ---

@@ -312,6 +312,6 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 Now you've enhanced the _Travel_ BO to support full transactional behavior – that is full create, update, and delete operations, with draft handling.
 
-You can continue with the next **optional** exercise - **[Exercise 10: Working with the Entity Manipulation Language (EML)](../ex10/README.md)**.
+You can continue with the next **optional** exercise - **[Exercise 10: Exploring the Entity Manipulation Language (EML)](../ex10/README.md)**.
 
 ---

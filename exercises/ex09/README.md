@@ -1,5 +1,9 @@
 # \[Optional\] Exercise 9: Full transactional enablement of the _Travel_ BO
 
+> [!NOTE] 
+> **This exercise is optional.**
+
+## Introduction
 You've implemented instance authorization checks for modify operations on the _Travel_ records by in the previous exercise - [_Exercise 8_](../ex08/README.md). 
 
 In this exercise, you will enhance the _Travel_ BO to support full transactional behavior – that is full create, update, and delete operations, with draft handling. 
@@ -16,7 +20,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 > [!TIP]
 > - Always replace all occurrences of the placeholder **`###`** in the provided code snippets with your personal suffix.
-> - Use the Pretty Printer function in ADt by press **Shift+F1** to format your source code. Configure it, if not yet done.
+> - Use the Pretty Printer function in ADT by pressing **Shift+F1** to format your source code. Configure it, if not yet done.
 > - Use the ADT function _**Find and Replace All**_ (**Ctrl+F**) to quickly replace text in the source code.
 > - Use the ADT function _**Quick Fix**_ (**Ctrl+1**), aka _Quick Assist_, on an erroneous element to get help with resolving the issue.
 > - Use the **Show ABAP element info** view (**F2**) to inspect an element in ADT editors.
@@ -39,15 +43,13 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 ## Exercise 9.1: Enhance the behavior of the base _Travel_ BO 
 
 > Enhance the behavior definition ![ ](../images/adt_bdef.png)`ZAD164_R_Travel_###` to enable the full standard transactional behavior of the base _Travel_ BO – CRUD: create, update, and delete – and activate draft handling to temporarily store transient data until it is persisted in the database.
-> 
-> To do this, you will enable the standard transactional behavior of the base _Travel_ and _Booking_ BO entities in  the behavior of ![ ](../images/adt_bdefe.png)**`ZAD164_R_Travel_###` and ![ ](../images/adt_bdefe.png)**`ZAD164_R_Booking_###`.
 
 <details>
   <summary>🔵Click to expand!</summary>   
  
 1. Open the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`** in the _Project Explorer_ and start the adjustment.
 
-2. Due to time constraints, simply replace the complete source code of with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix. 
+2. Due to time constraints, simply replace the complete source code with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix. 
 
    <details>
     <summary>🟡📄Click to expand!</summary> 
@@ -151,21 +153,40 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 3. Save![ ](../images/adt_save.png) (**Ctrl+S**) the changes.
    
-   > ⚠️ **Note**: You will not be able to activate the changes now because of missing draft tables `zad164_trvld_###` and `zad164_bookd_###`.   
+   > ℹ️ **Note**     
+   > You will not be able to activate the changes now because of missing draft persitencies ![ ](../images/adt_tabl.png)`zad164_trvld_###` and ![ ](../images/adt_tabl.png)`zad164_bookd_###` and
+   > other issues that will be fixed in the next steps.   
+   >  <table>
+   >   <tr><img src="images/ad164_91_fullcrud01b.png" alt="CRUD Enablement" width="60%"></tr>
+   >   <tr><img src="images/ad164_91_fullcrud01c.png" alt="CRUD Enablement" width="60%"> </tr>   
+   > </table>   
 
-4. Now generate the missing draft database tables **`zad164_trvld_###`** and **`zad164_bookd_###`** using the ADT _Quick Fix_ function.
+4. Generate the missing draft table ![ ](../images/adt_tabl.png)**`zad164_trvld_###`** for storing draft _travel_ data using the ADT _Quick Fix_ function. To do this, perform the steps below.  
+
+   1. Place the cursor on the draft table name **`zad164_travld_###`**, press **Ctrl+1** to open the **Quick Assist** view, and double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table.
+
+      <img src="images/ad164_91_fullcrud02a.png" alt="CRUD Enablement" width="100%">
+      
+   2. Keep the prefilled entries in the appearing dialog and click **Next >**, assign a transport request if needed, and press **Finish** to confirm the creation of the draft table. The generated draft database table is now displayed in the editor.
+
+      <img src="images/ad164_91_fullcrud02b.png" alt="CRUD Enablement" width="100%">
+
+   3. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the new database table.
+
+5. Generate the missing draft table ![ ](../images/adt_tabl.png)**`zad164_bookd_###`** for storing draft _booking_ data using the ADT _Quick Fix_ function, following the same steps as before.
+
+   1. Place the cursor on the draft table name **`zad164_bookd_###`**, press **Ctrl+1** to open the **Quick Assist** view, and double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table.
+
+     <!-- <img src="images/ad164_91_fullcrud03.png" alt="CRUD Enablement" width="100%"> -->
+
+   2. Keep the prefilled entries in the appearing dialog and click **Next >**, assign a transport request if needed, and press **Finish** to confirm the creation of the draft table. The generated draft database table is now displayed in the editor.
+
+   3. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the new database table.
   
-   Perform the steps below for both tables to do so.  
-   1) Place the cursor on the table name (`zad164_travld_###` or `zad164_bookd_###`) and press **Ctrl+1** to open the **Quick Assist** view.
-   2) Double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table. 
-      The generated draft database table is now displayed in the editor.
-   3) Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the new database table.
+6. You can now go back to the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`**, save![ ](../images/adt_save.png) (**Ctrl+S**), and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+
+</details>  
    
-5. You can now go back to the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`**, save![ ](../images/adt_save.png) (**Ctrl+S**), and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
-
-
-</details> 
-
 ## Exercise 9.2: Enhance the behavior of the _Travel_ BO projection
 
 > Expose the enhanced transactional behavior to the consumption layer by adjusting the behavior of the _Travel_ BO projection ![ ](../images/adt_bdef.png)`ZAD164_C_Travel_###`. 
@@ -175,7 +196,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 1. Open the behavior projection ![ ](../images/adt_bdef.png)**`ZAD164_C_Travel_###`** in the _Relation Explorer_.
 
-2. Due to time constraints, simply replace the complete source code of with the one provided below (🟡🚧) and replace **`###`** with your personal suffix.
+2. Due to time constraints, simply replace the complete source code with the one provided below (🟡🚧) and replace **`###`** with your personal suffix.
    
    The changes are explained below.
 

@@ -153,11 +153,11 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    
    > ⚠️ **Note**: You will not be able to activate the changes now because of missing draft tables `zad164_trvld_###` and `zad164_bookd_###`.   
 
-4. Generate the draft database tables **`zad164_trvld_###`** and **`zad164_bookd_###`** using the ADT _Quick Fix_ function.
+4. Now generate the missing draft database tables **`zad164_trvld_###`** and **`zad164_bookd_###`** using the ADT _Quick Fix_ function.
   
    Perform the steps below for both tables to do so.  
    1) Place the cursor on the table name (`zad164_travld_###` or `zad164_bookd_###`) and press **Ctrl+1** to open the **Quick Assist** view.
-   2) Doppel-click on **`Ceate draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table. 
+   2) Double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table. 
       The generated draft database table is now displayed in the editor.
    3) Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the new database table.
    

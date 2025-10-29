@@ -14,8 +14,11 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 - [Exercise 9.1: Enhance the behavior of the base _Travel_ BO](#exercise-91-enhance-the-behavior-of-the-base-travel-bo)
 - [Exercise 9.2: Enhance the behavior of the _Travel_ BO projection](#exercise-92-enhance-the-behavior-of-the-travel-bo-projection)
 - [Exercise 9.3: Preview and test the enhanced app](#exercise-93-preview-and-test-the-enhanced-app)
-- [Exercise 9.4: Extended _Manage Travels_ app](#exercise-94-extended-manage-travels-app)
 - [Summary & Next exercise](#summary--next-exercise)
+
+<!--
+- [Exercise 9.4: Extended _Manage Travels_ app](#exercise-94-extended-manage-travels-app)
+-->
 
 
 > [!TIP]
@@ -61,7 +64,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    <details>
     <summary>🟡📄Click to expand!</summary> 
     
-     <pre lang="ABAP CDS"> 
+    <pre lang="ABAP CDS"> 
       managed implementation in class zbp_ad164_r_travel_### unique;
       strict ( 2 );
       with draft;
@@ -149,6 +152,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
           }
       }
      </pre>
+   
    </details>
 
    The changes are highlighted in the screenshot below.
@@ -190,7 +194,9 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
    3. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the new database table.
   
-6. You can now go back to the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`**, save![ ](../images/adt_save.png) (**Ctrl+S**), and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+6. You can now go back to the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`**.
+  
+   Save![ ](../images/adt_save.png) (**Ctrl+S**), and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
 
 </details>  
    
@@ -203,10 +209,11 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 1. Open the behavior projection ![ ](../images/adt_bdef.png)**`ZAD164_C_Travel_###`** in the _Relation Explorer_.
 
-2. Due to time constraints, simply replace the complete source code with the one provided below (🟡🚧) and replace **`###`** with your personal suffix.
+2. Due to time constraints, simply replace the complete source code with the one provided below (🟡📄) and replace **`###`** with your personal suffix.
    
-   The changes are explained below.
-
+   <details>
+    <summary>🟡📄Click to expand!</summary> 
+     
    <pre lang="ABAP CDS"> 
     projection;
     strict ( 2 );
@@ -240,6 +247,8 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
     }
    </pre>
 
+   </details>  
+     
    The changes are highlighted in the screenshot below.
 
    <details>
@@ -249,27 +258,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 4. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
 
-<!--
-5. **Brief explanation** ⚠️🚧
-
-   <details>
-     <summary>ℹ️Click to expand!</summary>
-     
-     1) Add statement **`with draft;`** at the top of the behavior definition, directly below the statement **`strict ( 2 );`**.
-
-     2) Use the keyword **`use`** to expose the CRUD operations defined in the base _Travel_ BO entity in projected entity ![ ](../images/adt_bdefe.png)**`ZAD164_C_Travel_###`**.
    
-       - Insert code snippet below in the curly bracket `{ }` as displayed on the screenshot
-         
-         <pre lang="ABAP=> 
-           use create;
-           use update;
-           use delete;
-         </pre>
-         
-   </details>  
-    -->
-    
 </details> 
 
 
@@ -291,6 +280,8 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
         
 </details> 
 
+
+<!--
 
 ## Exercise 9.4: Extended _Manage Travels_ app
 
@@ -317,6 +308,8 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
     💡 Feel free to ask questions to the SAP experts available in the room.
         
 </details> 
+
+-->
 
 ## Summary & Next exercise
 

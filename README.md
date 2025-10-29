@@ -141,7 +141,7 @@ The exercises below are optional and can be completed by participants if time pe
 | ------------- |  -- |
 | [Exercise 8 – Add modify authorization checks](exercises/ex08/README.md) | -- |  
 | [Exercise 9 – Full transactional enablement of the _Travel_ BO](exercises/ex09/README.md) | -- |
-| [Exercise 10 – Working with the Entity Manipulation Language (EML)](exercises/ex10/README.md) | -- |
+| [Exercise 10 – Exploring the Entity Manipulation Language (EML)](exercises/ex10/README.md) | -- |
 
 
 ## Solution Package

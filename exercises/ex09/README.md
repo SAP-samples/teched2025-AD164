@@ -49,8 +49,6 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 2. Due to time constraints, simply replace the complete source code of with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix. 
 
-   The changes are explained below.
-
    <details>
     <summary>🟡📄Click to expand!</summary> 
     
@@ -165,22 +163,6 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    
 5. You can now go back to the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`**, save![ ](../images/adt_save.png) (**Ctrl+S**), and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
 
-6. **Brief explanation** ⚠️🚧 TODO 🚧⚠️
-
-   <details>
-     <summary>ℹ️Click to expand!</summary>
-     
-     1) Add statement **`with draft;`** at the top of the behavior definition, directly below the statement **`strict ( 2 );`**.
-
-     2) ...
-   
-       - Insert code snippet below in the curly bracket `{ }` as displayed on the screenshot
-         
-         <pre lang="ABAP=> 
-           ...
-         </pre>
-         
-   </details>  
 
 </details> 
 

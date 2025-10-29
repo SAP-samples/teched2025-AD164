@@ -49,7 +49,14 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
  
 1. Open the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`** in the _Project Explorer_ and start the adjustment.
 
-2. Due to time constraints, simply replace the complete source code with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix. 
+2. For the full enablement of the _create_, _update_, and _delete_ operations, as well as the draft handling, you need to do following adjustments: 
+
+   - Add the full CUD operations: `Create`, `Update`, `Delete`, _Create-by-association_, etc...
+   - Enable the draft handling for the _Travel_ BO, the _create-by-association_ operation, etc...
+   - Add the draft actions `Resume`, `Edit`, `Activate`, and `Discard`, and the determine action `Prepare`.  
+     Note: These draft actions are fully managed by the RAP application infrastructure
+
+   Due to time constraints, simply replace the complete source code with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix. 
 
    <details>
     <summary>🟡📄Click to expand!</summary> 

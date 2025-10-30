@@ -22,7 +22,7 @@
 > We’ve got sessions running in several locations → please pick the one that’s right for you!   
 > The placeholder **`###`** is used throughout this exercise as your personal suffix to create all artefacts.
 > 
-> **📌 Depending on the event you're attending, replace the last two digits to get your personal group number/suffix for this exercise:**
+> **📌 Depending on the event you're attending, replace the last two digits to get your personal suffix for this exercise:**
 >
 > - **SAP TechEd Berlin 2025** (**`1##`**): Packages ZAD164_EX_**101** to  ZAD164_EX_**140**  (e.g. Table seat `19` → Suffix **`119`**)
 >   

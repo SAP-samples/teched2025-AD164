@@ -87,7 +87,7 @@
    - System instance: **00**
 
    <br/>
-   <img src="images/abapproject_systemlogon1.png" alt="Create ABAP Project 1/2" width="70%">
+   <img src="images/abapproject_systemlogon1.png" alt="Create ABAP Project 1/2" width="50%">
 
    Now provide the system client and user credentials:
    - Client **400**
@@ -97,7 +97,7 @@
    You can keep the default **_Project name_** and click **Finish** to create the new ABAP Cloud Project in the **_Project Explorer_** view. 
 
    <br/>
-   <img src="images/abapproject_systemlogon2.png" alt="Create ABAP Project 2/2" width="70%">
+   <img src="images/abapproject_systemlogon2.png" alt="Create ABAP Project 2/2" width="50%">
    
 </details>
 

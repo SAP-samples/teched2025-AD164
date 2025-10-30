@@ -28,6 +28,7 @@
 >   
 > - **ASUG Tech Connect 2025** (**`2##`**): Packages ZAD164_EX_**201** to  ZAD164_EX_**299**  (e.g. Table seat `19` → Suffix **`219`**)
 
+<!--
 ## 🔐 System and Logon Information
 
 <table>
@@ -64,7 +65,7 @@
     <td><b>ZAD164_EX_###</b> (<i>where `###` is your location-based suffix</i>)</td>
   </tr>
 </table>
-
+-->
 
 ## Create a connection to the ABAP system in ADT
 
@@ -79,14 +80,22 @@
 
 2. If not done already, now create the **ABAP Project** as shown in the screenshots below. 
   
-   Maintain the system info and user credentials, and confirm.
+   Maintain the required system info and click **Next >**:
+   - System ID: **HE4**
+   - Server: _Info provided by instructor_
+   - System instance: **00**
+     
+   <img src="images/abapproject_systemlogon1.png" alt="Create ABAP Project 1/2" width="70%">
 
-   ![Create ABAP Project 1/2](images/abapproject_systemlogon1.png)
-    
-   You can keep the default **_Project name_** and click **_Finish_** to create the new ABAP Cloud Project in the **_Project Explorer_** view. 
+   Now provide the system client and user credentials:
+   - Client **400**
+   - User: **AD164-###**
+   - Password: _Info provided by instructor_
+       
+   You can keep the default **_Project name_** and click **Finish** to create the new ABAP Cloud Project in the **_Project Explorer_** view. 
 
-   <!--![Create ABAP Project 2/2](images/abapproject_systemlogon2.png)-->
-
+   <img src="images/abapproject_systemlogon2.png" alt="Create ABAP Project 2/2" width="70%">
+   
 </details>
 
 

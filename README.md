@@ -115,7 +115,7 @@ Exercises 1-7 provided in the block are the main focus of this hands-on workshop
 
 | Main exercises | -- |
 | ------------- |  -- |
-| [Getting Started](exercises/ex0/README.md) | -- |
+| [Getting Started – Connect and logon](exercises/ex0/README.md) | -- |
 | [Exercise 1 – Define the base BO data model](exercises/ex01/README.md) | -- |
 | [Exercise 2 – Define the data model of the BO projection](exercises/ex02/README.md) | -- |
 | [Exercise 3 – Create the OData UI service](exercises/ex03/README.md) | -- |

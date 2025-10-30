@@ -16,7 +16,55 @@
 > The screenshots in this document have been taken using the suffix or assigned suffix  **`810`** and the system **`D23`**.  
 > We **do not recommend** using assigned suffix **`810`** or **`000`**.
 > 
-> Please note that ADT dialogs and views as well as SAP Fiori UIs may change in upcoming releases.
+> <!-- Please note that ADT dialogs and views as well as SAP Fiori UIs may change in upcoming releases. -->
+
+> [!CAUTION]    
+> We’ve got sessions running in several locations → please pick the one that’s right for you!   
+> The placeholder **`###`** is used throughout this exercise as your personal suffix to create all artefacts.
+> 
+> **📌 Depending on the event you're attending, replace the last two digits to get your personal group number/suffix for this exercise:**
+>
+> - **SAP TechEd Berlin 2025** (**`1##`**): Packages ZAD164_EX_**101** to  ZAD164_EX_**140**  (e.g. Table seat `19` → Suffix **`119`**)
+>   
+> - **ASUG Tech Connect 2025** (**`2##`**): Packages ZAD164_EX_**201** to  ZAD164_EX_**299**  (e.g. Table seat `19` → Suffix **`219`**)
+
+## 🔐 System and Logon Information
+
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Value (<i>SAP S/4HANA 2023 system</i>)</th>
+  </tr>
+  <tr>
+    <td>SAP SYSTEM ID</td>
+    <td> <b>HE4</b></td>
+  </tr>  
+  <tr>
+    <td>SERVER</td>
+    <td><i>Info will be provided by your instructors</i></td>
+  </tr>
+  <tr>
+    <td>INSTANCE</td>
+    <td><b>00</b></td>
+  </tr>  
+  <tr>
+    <td>CLIENT</td>
+    <td><b>400</b></td>
+  </tr>   
+  <tr>
+    <td>User</td>
+    <td><b>AD164-###</b> (<i>where `###` is your location-based suffix</i>)</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><i>Info will be provided by your instructors</i></td>
+  </tr>
+  <tr>
+    <td>Exercise Package</td>
+    <td><b>ZAD164_EX_###</b> (<i>where `###` is your location-based suffix</i>)</td>
+  </tr>
+</table>
+
 
 ## Create a connection to the ABAP system in ADT
 

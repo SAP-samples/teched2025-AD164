@@ -100,6 +100,7 @@
    
 </details>
 
+<br/>
 
 ## Solution Packages
 [^Top of page](#)
@@ -151,6 +152,8 @@ This version of the _Manage Travels_ app includes various RAP capabilities, that
 
 </details>
 
+<br/>
+
 ## Group ID (Suffix)
 [^Top of page](#)
 
@@ -196,6 +199,8 @@ Once you've found an available group ID, choose **Cancel**.
 
 </details>
 -->
+
+<br/>
 
 ## Your Exercise Package
 [^Top of page](#)
@@ -249,6 +254,8 @@ Once you've found an available group ID, choose **Cancel**.
 > </details>
 -->
 
+<br/>
+
 ## Working with Github
 [^Top of page](#)
 
@@ -260,6 +267,8 @@ Here are a few tips to complete this exercise on GitHub.
   <img src="images/git_working01.png" alt="Working with GitHub" width="100%"> 
 
 </details>
+
+<br/>
 
 ## Helpful Information
 [^Top of page](#)
@@ -299,6 +308,8 @@ When working in the ABAP Development Tools for Eclipse, you can display the full
 ![ADT Shortcuts](images/adt_shortcuts.png)
  
 </details>
+
+<br/>
 
 ## Summary & Next exercise
 [^Top of page](#)

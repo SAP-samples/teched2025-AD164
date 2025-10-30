@@ -24,9 +24,9 @@
 > 
 > **📌 Depending on the event you're attending, replace the last two digits to get your personal suffix for this exercise:**
 >
-> - **SAP TechEd Berlin 2025** (**`1##`**): Packages ZAD164_EX_**101** to  ZAD164_EX_**140**  (e.g. Table seat `19` → Suffix **`119`**)
+> - **SAP TechEd Berlin 2025** (**`1##`**): User AD164-**101** to  AD164-**140**  (e.g. Table seat `19` → Suffix **`119`**)
 >   
-> - **ASUG Tech Connect 2025** (**`2##`**): Packages ZAD164_EX_**201** to  ZAD164_EX_**299**  (e.g. Table seat `19` → Suffix **`219`**)
+> - **ASUG Tech Connect 2025** (**`2##`**): User AD164-**201** to  AD164-**299**  (e.g. Table seat `19` → Suffix **`219`**)
 
 <!--
 ## 🔐 System and Logon Information

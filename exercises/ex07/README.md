@@ -502,8 +502,8 @@ Now you've...
 Congratulations!🎉 You've completed the main exercise of this hands-on workshop – we hope you enjoyed it and learned a thing or two! 🎉
 
 If time permits, you can continue with one of the following: 
-- Watch the **[Demo on ABAP Cloud generators](../../demo/README.md)**
+- Watch the **[Demo on ABAP Cloud generators](../demo/README.md)**
 - Continue with the **optional** exercise – **[Exercise 8: Add modify authorization checks](../ex08/README.md)**
-- Return to **[Home - AD164](../README.md)**
+- Return to **[Home - AD164](../../README.md)**
 
 ---

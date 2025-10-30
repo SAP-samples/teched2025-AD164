@@ -51,7 +51,7 @@ The ABAP Development Tools for Eclipse (ADT) offers **standard ABAP Cloud genera
 
 Choose one of the following options:
 * Continue with [Exercise 8: Add modify authorization checks](../ex08/README.md) (*optional exercise*)
-* Return to [Home - AD164](../README.md).
+* Return to [Home - AD164](../../README.md).
 
 Join us in other [ABAP Cloud sessions at SAP TechEd 2025](https://community.sap.com/t5/technology-blog-posts-by-sap/abap-cloud-sessions-at-sap-teched-in-2025/ba-p/14175995) to learn more about the ABAP Cloud development model!
 

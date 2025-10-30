@@ -67,6 +67,7 @@
 </table>
 -->
 
+   
 ## Create a connection to the ABAP system in ADT
 
 > Create an **ABAP Project** to connect your ADT client to the **SAP S/4HANA** or **SAP S/4HANA Cloud Private Edition** system.
@@ -256,8 +257,15 @@ Once you've found an available group ID, choose **Cancel**.
 
 <br/>
 
-## Working with Github
+## Helpful Information
 [^Top of page](#)
+
+This section contains some helpful information for the exercises: _Find/Replace_ functionality, modern ABAP syntax, and useful ADT shortcuts.
+
+<details>
+  <summary>🔵 Click to expand!</summary>
+
+### Working with Github
 
 Here are a few tips to complete this exercise on GitHub.
 
@@ -267,16 +275,6 @@ Here are a few tips to complete this exercise on GitHub.
   <img src="images/git_working01.png" alt="Working with GitHub" width="100%"> 
 
 </details>
-
-<br/>
-
-## Helpful Information
-[^Top of page](#)
-
-This section contains some helpful information for the exercises: _Find/Replace_ functionality, modern ABAP syntax, and useful ADT shortcuts.
-
-<details>
-  <summary>🔵 Click to expand!</summary>
  
 ### Find/Replace
 In the course of these exercises you will frequently see the task to "_replace the placeholder **`###`** with your assigned suffix_", where *###* is your assigned suffix. 

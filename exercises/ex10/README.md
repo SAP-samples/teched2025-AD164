@@ -68,7 +68,7 @@ You will have the opportunity to test the _privileged mode_ enabled in [_Exercis
    > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
    > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
      
-   🟡📄 **Source code document**: ![class icon](../images/adt_class.png)[ABAP Class: ZCL_AD164_EML_###](images/EX10_CLASS_ZCL_AD164_EML.txt)
+   🟡📄 **Source code document**: ![class icon](../images/adt_class.png)[ABAP Class: ZCL_AD164_EML_###](images/ex10_class_zcl_ad164_eml.txt)
 4. Save ![save icon](../images/adt_save.png) (**Ctrl+S**) and activate ![activate icon](../images/adt_activate.png) (**Ctrl+F3**) the class.
 
 5. Brief explanation of the different methods in ![ ](../images/adt_class.png)**`ZCL_AD164_EML_###`**

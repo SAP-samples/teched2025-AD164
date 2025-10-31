@@ -4,7 +4,7 @@
 > **This exercise is optional.**
 
 ## Introduction
-You've implemented instance authorization checks for modify operations on the _Travel_ records by in the previous exercise - [_Exercise 8_](../ex08/README.md). 
+You've implemented instance authorization checks for modify operations on the _Travel_ records in the previous exercise - [_Exercise 8_](../ex08/README.md). 
 
 In this exercise, you will enhance the _Travel_ BO to support full transactional behavior – that is full create, update, and delete operations, with draft handling. 
 To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png)`ZAD164_R_TRAVEL_###` and  the behavior projection ![ ](../images/adt_bdef.png)`ZAD164_C_TRAVEL_###`, where `###`is your personal suffix.
@@ -12,8 +12,9 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 ### Exercise steps
 - [Exercise 9.1: Enhance the behavior of the base _Travel_ BO](#exercise-91-enhance-the-behavior-of-the-base-travel-bo)
-- [Exercise 9.2: Enhance the behavior of the _Travel_ BO projection](#exercise-92-enhance-the-behavior-of-the-travel-bo-projection)
-- [Exercise 9.3: Preview and test the enhanced app](#exercise-93-preview-and-test-the-enhanced-app)
+- [Exercise 9.2: Enhance the base _Travel_ behavior implementation](#exercise-92-enhance-the-base-travel-behavior-implementation)
+- [Exercise 9.3: Enhance the behavior of the _Travel_ BO projection](#exercise-93-enhance-the-behavior-of-the-travel-bo-projection)
+- [Exercise 9.4: Preview and test the enhanced app](#exercise-94-preview-and-test-the-enhanced-app)
 - [Summary & Next exercise](#summary--next-exercise)
 
 <!--
@@ -59,101 +60,12 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    - Add the draft actions `Resume`, `Edit`, `Activate`, and `Discard`, and the determine action `Prepare`.  
      Note: These draft actions are fully managed by the RAP application infrastructure
 
-   Due to time constraints, simply replace the complete source code with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix. 
+   Due to time constraints, simply replace the complete source code with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix using the _Replace All_ function (**Ctrl+F**).
 
-   <details>
-    <summary>🟡📄Click to expand!</summary> 
-    
-    <pre lang="ABAP CDS"> 
-      managed implementation in class zbp_ad164_r_travel_### unique;
-      strict ( 2 );
-      with draft;
-      
-      with privileged mode disabling NoCheckWhenPrivileged;
-      define authorization context NoCheckWhenPrivileged { '/DMO/TRVL'; }
-      define own authorization context by privileged mode;
-      
-      define behavior for ZAD164_R_Travel_### alias Travel
-      persistent table zad164_trvl_###
-      draft table zad164_trvld_###
-      lock master total etag LastChangedAt
-      authorization master ( instance )
-      etag master LocalLastChangedAt
-      with additional save with full data
-      {
-        field ( numbering : managed, readonly ) TravelUUID;
-        association _Booking { create; with draft; }
-      
-        create;
-        update;
-        delete;
-      
-        event statusUpdated parameter ZAD164_A_StatusUpdated_###;
-      
-        action ( features : instance, authorization : update ) acceptTravel result [1] $self;
-        action ( features : instance, authorization : update ) rejectTravel result [1] $self;
-      
-        draft action Resume;
-        draft action Edit;
-        draft action Activate optimized;
-        draft action Discard;
-        draft determine action Prepare;
-      
-        mapping for zad164_trvl_###
-          {
-            TravelUUID         = travel_uuid;
-            TravelID           = travel_id;
-            AgencyID           = agency_id;
-            CustomerID         = customer_id;
-            BeginDate          = begin_date;
-            EndDate            = end_date;
-            BookingFee         = booking_fee;
-            TotalPrice         = total_price;
-            CurrencyCode       = currency_code;
-            Description        = description;
-            OverallStatus      = overall_status;
-            LocalCreatedBy     = local_created_by;
-            LocalCreatedAt     = local_created_at;
-            LocalLastChangedAt = local_last_changed_at;
-            LocalLastChangedBy = local_last_changed_by;
-            LastChangedAt      = last_changed_at;
-          }
-      }
-      
-      define behavior for ZAD164_R_Booking_### alias Booking
-      persistent table zad164_book_###
-      draft table zad164_bookd_###
-      lock dependent by _Travel
-      authorization dependent by _Travel
-      etag master LocalLastChangedAt
-      {
-      
-        field ( numbering : managed, readonly ) BookingUUID;
-        field ( readonly ) TravelUUID;
-      
-        update;
-        delete;
-        association _Travel { with draft; }
-      
-        mapping for zad164_book_###
-          {
-            BookingUUID        = booking_uuid;
-            TravelUUID         = parent_uuid;
-            BookingID          = booking_id;
-            BookingDate        = booking_date;
-            CustomerID         = customer_id;
-            AirlineID          = carrier_id;
-            ConnectionID       = connection_id;
-            FlightDate         = flight_date;
-            FlightPrice        = flight_price;
-            CurrencyCode       = currency_code;
-            BookingStatus      = booking_status;
-            LocalLastChangedAt = local_last_changed_at;
-          }
-      }
-     </pre>
-   
-   </details>
+   > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
+   > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
+     
+   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 01: ZAD164_R_Travel_###](images/ex09_bdef_ZAD164_R_Travel_01.txt)
 
    The changes are highlighted in the screenshot below.
 
@@ -188,40 +100,107 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
    1. Place the cursor on the draft table name **`zad164_bookd_###`**, press **Ctrl+1** to open the **Quick Assist** view, and double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table.
 
-     <!-- <img src="images/ad164_91_fullcrud03.png" alt="CRUD Enablement" width="100%"> -->
-
    2. Keep the prefilled entries in the appearing dialog and click **Next >**, assign a transport request if needed, and press **Finish** to confirm the creation of the draft table. The generated draft database table is now displayed in the editor.
 
    3. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the new database table.
   
 6. You can now go back to the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`**.
-  
-   Save![ ](../images/adt_save.png) (**Ctrl+S**), and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+
+   > ℹ️ **Note:**
+   > These are the adjustments you need to specify in the base BO behavior definition for the full CRUD enablement. Now further enhance the base BO behavior.
+
+7. Enhance the base _Travel_ BO behavior definition with validations, determinations, internal actions, and side effects. Also add a precheck for the _create_ and _update_ operations, the global _modify_ authorization, and more.
+
+     For the _Travel_ BO entity:     
+   - **Validations**: `validateCustomer`, `validateAgency`, `validateDates`, and `validateCurrencyCode` – to check the values for the entered customer, agency, the dates and currency code, respectively.
+   -  **Determinations**: `setTravelNumber`, `setStatusToOpen`, and `calculateTotalPrice` – to set the Travel ID and the initial overal travel status at creation, and calculate the total price at creation or everytime the booking fee and/or currency code are changed.
+   -  **Internal actions**: `reCalcTotalPrice` – to re-calculate the total price each time it is called inside the BO.   
+   -  **Side effects**: to trigger an update of the total price each time the booking fee changes.
+      
+     For the _Booking_ BO entity:     
+   - **Validations**: `validateCustomer`, `validateConnection`, `validateFlightPrice`, and `validateCurrencyCode` – to check the values for the entered customer, connection, flight price, and currency code, respectively.
+   -  **Determinations**: `setBookingNumber`, `setBookingDate`, and `calculateTotalPrice` – to set the booking ID and the booking date at creation, and calculate the total price at creation or everytime the flight price and/or currency code are changed.
+   -  **Side effects**: to trigger an update of the total price each time the flight price changes.
+
+   Due to time constraints, simply replace the complete source code with the one (🟡📄) provided below and replace all occurrences of **`###`** with your personal suffix using the _Replace All_ function (**Ctrl+F**).
+
+   > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
+   > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
+     
+   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 02: ZAD164_R_Travel_###](images/ex09_bdef_ZAD164_R_Travel_02.txt)
+
+8. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+
+9. To enhance the behavior implementation class ![ ](../images/adt_class.png)**`zbp_ad164_r_travel_###`**, **simply** go directly to the next exercise (_Exercise 9.2_) or first trigger  the addition of the missing methods to it using the *Quick Fix* function (*Ctrl+1*) from the behavior definition ![ ](../images/adt_bdef.png) as described below.
+     
+   <details>
+     <summary>Click to expand!</summary>  
+    
+   For the _Travel_ BO entity, go to the yellow-underlined statement **`define behavior for ZAD164_R_Travel_### alias Travel`**, place the cursor on the behavior name, press **Ctrl+1** to start the _Quick Assist_ view, and double-click the entry Add **`There are 11 methods missing for entity zad164_r_travel_###. Add them to 
+local handler class lhc_travel inside global class zbp_ad164_r_travel_###.`** in the dialog to open the class creation wizard. This will trigger an adjustment of the local handler class **`lhc_travel`**.
+
+   <img src="images/ad164_91_fullcrud03a.png" alt="CRUD Enablement" width="80%">
+       
+   Save![ ](../images/adt_save.png) (**Ctrl+S**) and go back to the behavior defintiion.
+       
+   For the _Booking_ BO entity, go to one of the yellow-underlined statements – e.g. **`determination setBookingNumber on save { create; }`** –,  place the cursor on the determination name, press **Ctrl+1** to start the _Quick Assist_ view, and double-click the entry Add **`There are 7 methods missing for entity zad164_r_booking_###. Add them 
+within a new local handler class inside global class zbp_ad164_r_travel_###.`** in the dialog to open the class creation wizard. This will trigger the addition of a new local handler class for the booking entity to the the _travel_ behavior pool. This will trigger the addition of the local handler class **`lhc_booking`**
+
+   <img src="images/ad164_91_fullcrud03b.png" alt="CRUD Enablement" width="80%">   
+      
+   Save![ ](../images/adt_save.png) (**Ctrl+S**) the behavior pool and go ahead with the next exercise.
+    
+   </details>  
 
 </details>  
-   
-## Exercise 9.2: Enhance the behavior of the _Travel_ BO projection
 
-> Expose the enhanced transactional behavior to the consumption layer by adjusting the behavior of the _Travel_ BO projection ![ ](../images/adt_bdef.png)`ZAD164_C_Travel_###`. 
+## Exercise 9.2: Enhance the base _Travel_ behavior implementation
+
+> Implement the logic of additional base Travel BO behavior defined in the previous step in the behavior implementation class (aka behavior pool) ![ ](../images/adt_class.png)`ZBP_AD164_R_Travel_###`.
+
+<details>
+  <summary>🔵Click to expand!</summary>   
+
+1. Open the class (../images/adt_class.png)**`ZBP_AD164_R_Travel_###`** in the _Relation Explorer_ and go to the **◇Local Types** tab.
+
+2. Due to time constraints, simply replace the complete source code with the one provided below (🟡📄) and replace **`###`** with your personal suffix using the _Replace All_ function (**Ctrl+F**).
+
+   > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
+   > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
+     
+   🟡📄 **Source code document**: ![class icon](../images/adt_class.png)[Behavior Pool: ZBP_AD164_R_Travel_###](images/ex09_class_zbp_ad164_r_travel.txt)
+
+3. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
+
+</details>
+
+   
+## Exercise 9.3: Enhance the behavior of the _Travel_ BO projection
+
+> Expose the enhanced transactional behavior to the consumption layer by adjusting the behavior of the _Travel_ BO projection ![ ](../images/adt_bdef.png)`ZAD164_C_Travel_###`.
+> 
+> **Note**: Validations and determinations are automatically trigerred by the RAP application infrastructure at the deined time. CUD, draft handling, actions, side effects and other non-standard behavior must be exposed explicitely to the consumption layer, namely the BO projections and BO interfaces..  
 
 <details>
   <summary>🔵Click to expand!</summary>   
 
 1. Open the behavior projection ![ ](../images/adt_bdef.png)**`ZAD164_C_Travel_###`** in the _Relation Explorer_.
 
-2. Due to time constraints, simply replace the complete source code with the one provided below (🟡📄) and replace **`###`** with your personal suffix.
+2. Now expose the CUD operations, the draft handling, and the side effects to the consumption layer.
+       
+   Due to time constraints, simply replace the complete source code with the one provided below (🟡📄) and replace **`###`** with your personal suffix.
    
    <details>
-    <summary>🟡📄Click to expand!</summary> 
+   <summary>🟡📄Click to expand!</summary>    
      
-   <pre lang="ABAP CDS"> 
+   <pre lang="ABAP CDS">
     projection;
     strict ( 2 );
     use draft;
+    use side effects;
   
     define behavior for ZAD164_C_Travel_### alias Travel
-    {
-  
+    {  
       use create;
       use update;
       use delete;
@@ -257,12 +236,11 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    </details>  
 
 4. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
-
    
 </details> 
 
 
-## Exercise 9.3: Preview and test the enhanced app
+## Exercise 9.4: Preview and test the enhanced app
 
 > Check the new behavior of your _Manage Travels_ app resulting from the full transactional enablement of the _Travel_ BO.
 > You can now create new _travel_ and _booking_ records, and edit or delete existing ones.
@@ -280,6 +258,36 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
         
 </details> 
 
+
+<!--
+
+## Exercise 9.4: Extended _Manage Travels_ app
+
+> Start the extended _Manage Travels_ app in the solution package ![ ](../images/adt_package.png)`ZAD164_SOL_RAP_EXT`.
+> 
+> Various RAP features are implemented in the extended _Manage Travels_ app – such as [validations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/validations?version=Cloud), [determinations](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/determinations?version=Cloud), and [(event-driven) side effects](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/side-effects?version=Cloud). You can learn more about
+> the implementation of this app in the [RAP Development Guide](https://help.sap.com/docs/abap-cloud/abap-rap/developing-transactional-apps-with-draft-capabilities?version=sap_btp).
+
+<details>
+  <summary>🔵Click to expand!</summary>   
+ 
+ 1. Add the solution package ![ ](../images/adt_package.png)**`ZAD164_SOL_RAP_EXT`** to your **Favorite Packages** folder in the _Relation Explorer_.
+    
+ 2. Navigate to the sub-folder **Business Services** > **Service Bindings** and double-click the service binding ![ ](../images/adt_srvb.png)**`ZAD164_UI_TRAVEL_O4_EXT`**.
+
+ 3. In the service binding, select the leading entity (![ ](../images/adt_ddls_lead.png)), **_Travel_** in the ***Entity Set and Association*** area, and either right-click it and choose _Open Fiori elements App preview_ from the context menu, or choose the Preview button, simply double-click it to start the Fiori elements app preview in the browser.
+     
+    <img src="images/ad164_94_fullcrud05.png" alt="CRUD Enablement" width="80%"> 
+    
+  4. Click the **Go** button (![ ](../images/icon_go.png)) to load the data and play around with the extended app.
+
+  5.  You can also take a look at the behavior definition of the base _Travel_ BO ![ ](../images/adt_bdef.png)**`ZAD164_R_TRAVEL_EXT`** and the _Travel_ BO projection ![ ](../images/adt_bdef.png)**`ZAD164_C_TRAVEL_EXT`**.
+    
+    💡 Feel free to ask questions to the SAP experts available in the room.
+        
+</details> 
+
+-->
 
 ## Summary & Next exercise
 

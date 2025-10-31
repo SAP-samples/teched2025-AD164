@@ -6,7 +6,7 @@ This repository contains the material for the SAP TechEd 2025 session [**AD164 �
 
 The ABAP Cloud development model (ABAP Cloud) is the development model to build business apps, services, and extensions that follow the clean core principles by default on SAP BTP, SAP S/4HANA Cloud, and SAP S/4HANA as of release 2022. It is an integral part of SAP Build.
 
-In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how the new concepts work. Building on your knowledge of classic ABAP, you’ll learn how to develop cloud-ready business apps and services. You'll use the ABAP RESTful application programming model (RAP) which is the programming model for building transactional scenarios. Based on a practical scenario, you will rebuild an existing ALV-based app as an a modern SAP Fiori app with RAP, and extend it further with new capabilities. 
+In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how the new concepts work. Building on your knowledge of classic ABAP, you’ll learn how to develop cloud-ready business apps and services. You'll use the ABAP RESTful application programming model (RAP) which is used for building transactional scenarios. Based on a practical scenario, you will rebuild an existing ALV-based app as an a modern SAP Fiori app with RAP, and extend it further with new capabilities. 
 
 > [!NOTE]  
 > Please note that the focus of this hands-on workshop is on backend development – specifically, developing OData UI services, including the UI semantics for the SAP Fiori elements UI – rather than on SAP Fiori UI development.  

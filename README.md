@@ -11,7 +11,8 @@ In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how
 **The business context for the scenario is as follows:**     
 The department responsible for managing worldwide Travels for multiple Agencies is requesting you to build a new SAP Fiori app, Manage Travels, with different capabilities to process travel bookings. More information on the scenario and the app will be given throughout the exercises.
   
-**Resulting app:**     
+**Resulting app:**   
+
 <details>
 <summary>Click to expand!</summary>
 Below is an illutrastion of the RAP-based _Manage Travels_ app built with **ABAP Cloud**:

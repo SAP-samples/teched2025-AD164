@@ -72,6 +72,11 @@ Before completing the exercises in this repository, you need to:
 ## Business scenario
 In this hands-on workshop, we'll guide you through the development of a transactional OData service of a SAP Fiori elements-based app with ABAP Cloud using the ABAP RESTful Application Programming Model (RAP). 
 
+**The business context for the scenario is as follows:** 
+The department responsible for managing worldwide Travels for multiple Agencies is requesting you to build a new SAP Fiori app, Manage Travels, with different capabilities to process travel bookings. More information on the scenario and the app will be given throughout the exercises.
+
+<!--
+
 <details>
 <summary>ℹ️Click to expand!</summary>
 
@@ -105,15 +110,15 @@ The OData service you are going to implement is based on the simplified _Flight_
 
 </details>
 
+-->
+
 ## Exercises
 [^Top of page](#)
 
 Follow the steps below to build the _Travel_ app based on an OData service on top of a draft-enabled RAP Business Object (BO) to develop a transactional Fiori elements List Report app from scratch using RAP. 
 
 > [!NOTE]  
-> Instead of using existing ABAP Cloud generators to generate all basic ABAP development artifacts required for building the _Manage Travels_ app, you'll build them step by step to better understand the ABAP Cloud development model, especially the ABAP RESTful Application Programming Model (RAP) in this workshop.
-> 
-> _Block B_ below contains demo videos on the existing ABAP Cloud generators, incl. classic and AI-based generation.
+> Instead of using existing ABAP Cloud generators to generate all basic ABAP development artifacts required for building the _Manage Travels_ app, you'll build them step by step to better understand the ABAP Cloud development model, especially the ABAP RESTful Application Programming Model (RAP) in this workshop. The _Block B_ below contains demo videos on the existing classic and AI-based ABAP Cloud generators.
 
 #### Exercise Block A 
 

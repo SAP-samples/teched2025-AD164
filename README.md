@@ -14,7 +14,7 @@ The department responsible for managing worldwide Travels for multiple Agencies 
 **Resulting app:**     
 <details>
 <summary>Click to expand!</summary>
-Below is an illutrastion of the RAP-based  _Manage Travels_ app built with **ABAP Cloud**:
+Below is an illutrastion of the RAP-based _Manage Travels_ app built with **ABAP Cloud**:
     <details>
     <summary>🖼️Click to expand!</summary>
     <img src="exercises/images/travelapp_rap_sol01.png" alt="ABAP Cloud - Manage Travels App" width="100%"> 

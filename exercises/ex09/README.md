@@ -65,7 +65,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
    > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
      
-   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 01: ZAD164_R_Travel_###](images/ex09_bdef_ZAD164_R_Travel_01.txt)
+   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 01: ZAD164_R_Travel_###](images/ex09_bdef_zad164_r_travel_02.txt)
 
    The changes are highlighted in the screenshot below.
 
@@ -127,11 +127,11 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
    > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
      
-   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 02: ZAD164_R_Travel_###](images/ex09_bdef_ZAD164_R_Travel_02.txt)
+   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 02: ZAD164_R_Travel_###](images/ex09_bdef_zad164_r_travel_02.txt)
 
 8. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
 
-9. To enhance the behavior implementation class ![ ](../images/adt_class.png)**`zbp_ad164_r_travel_###`**, **simply** go directly to the next exercise (_Exercise 9.2_) or first trigger  the addition of the missing methods to it using the *Quick Fix* function (*Ctrl+1*) from the behavior definition ![ ](../images/adt_bdef.png) as described below.
+9. To enhance the behavior implementation class ![ ](../images/adt_class.png)**`zbp_ad164_r_travel_###`**, **simply go directly to the next exercise (_Exercise 9.2_)** – or first trigger the addition of the missing methods using the *Quick Fix* function (*Ctrl+1*) in the behavior definition ![ ](../images/adt_bdef.png) as described below (_click to expand_).
      
    <details>
      <summary>Click to expand!</summary>  

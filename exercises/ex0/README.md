@@ -98,7 +98,6 @@
 
    <br/>
    <img src="images/abapproject_systemlogon2.png" alt="Create ABAP Project 2/2" width="50%">
-   
 </details>
 
 <br/>
@@ -116,6 +115,8 @@
 If you are attending one of the on-site SAP TechEd 2025 events, you can take a short look at the apps in the ABAP system, before you start with the implementation in your assigned exercise package. 
 <br/>
 
+### ✈️ **Starting point:**     
+
 **Classic ABAP: Classic ALV-based _Manage Travels_ app:**
 
 - Package name: **`ZAD164_SOL_ALV`**
@@ -127,8 +128,9 @@ If you are attending one of the on-site SAP TechEd 2025 events, you can take a s
   
   <br/><img src="../images/travelapp_alv_sol01.png" alt="Classic ABAP - Manage Travels App" width="100%"> 
 </details>
-
 <br/>
+
+### 🏁 **Resulting app:**   
 
 **ABAP Cloud: Fiori elements-based _Manage Travels_ app built with RAP:**
 

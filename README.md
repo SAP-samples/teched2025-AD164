@@ -11,6 +11,8 @@ In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how
 > [!NOTE]  
 > Please note that the focus of this hands-on workshop is on backend development – specifically, developing OData UI services, including the UI semantics for the SAP Fiori elements UI – rather than on SAP Fiori UI development.  
 
+<!--
+
 #### Table of Content
 
 - [Requirements for attending this workshop](#requirements-for-attending-this-workshop)
@@ -22,10 +24,14 @@ In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how
 - [Further Information](#further-information)
 - [License](#license)
 
+-->
+
 ## Requirements for attending this workshop
 [^Top of page](#)
 
+<!--
 To complete the practical exercises in this repository, you need the **latest _ABAP Development Tools for Eclipse_** (ADT) on your laptop or PC, and the access to a **suitable ABAP system**, namely at least release 2023 of SAP S/4HANA or SAP S/4HANA Cloud Private Edition, SAP BTP ABAP Environment, or SAP S/4HANA Cloud Public Cloud. In addition, the appropriate version of the [**ABAP Flight Reference Scenario**](https://github.com/SAP-samples/abap-platform-refscen-flight) (package `/DMO/FLIGHT`) must be imported into the system.
+-->
 
 > [!IMPORTANT]  
 > **For attendees of on-site SAP TechEd 2025 event**:  
@@ -126,11 +132,11 @@ Exercises 1-7 provided in the block are the main focus of this hands-on workshop
 
 #### Block B 
 
-The ABAP development tools for Eclipse provide various standard and AI-based ABAP Cloud generators to create all required development artifacts – from the database table and the CDS objects to the RAP BO and OData service – that you've created manually for learning purposes in this hands-on workshop. 
+The ABAP development tools for Eclipse provide various standard and AI-based ABAP Cloud generators to create all required development artifacts – from the database table and the CDS objects to the RAP BO and OData service – that you've created manually for learning purposes in this hands-on workshop. See how to use them in the demo provided.
 
 | Demos | -- |
 | ------------- |  -- |
-| [Demo – Use the ABAP Cloud generators to create RAP-based UI services](exercises/demo/README.md)| -- |
+| [Demo – Using the ABAP Cloud generators to create RAP-based UI services](exercises/demo/README.md)| -- |
 
 
 #### Exercise Block C (Optional)

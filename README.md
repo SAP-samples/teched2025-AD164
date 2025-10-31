@@ -8,6 +8,9 @@ The ABAP Cloud development model (ABAP Cloud) is the development model to build 
 
 In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how the new concepts work. Building on your knowledge of classic ABAP, you’ll learn how to develop cloud-ready business apps and services. You'll use the ABAP RESTful application programming model (RAP) which is used for building transactional scenarios. Based on a practical scenario, you will rebuild an existing ALV-based app as an a modern SAP Fiori app with RAP, and extend it further with new capabilities. 
 
+**The business context for the scenario is as follows:**     
+The department responsible for managing worldwide Travels for multiple Agencies is requesting you to build a new SAP Fiori app, Manage Travels, with different capabilities to process travel bookings. More information on the scenario and the app will be given throughout the exercises.
+
 > [!NOTE]  
 > Please note that the focus of this hands-on workshop is on backend development – specifically, developing OData UI services, including the UI semantics for the SAP Fiori elements UI – rather than on SAP Fiori UI development.  
 
@@ -69,13 +72,10 @@ Before completing the exercises in this repository, you need to:
 
 </details>
 
+<!--
+
 ## Business scenario
 In this hands-on workshop, we'll guide you through the development of a transactional OData service of a SAP Fiori elements-based app with ABAP Cloud using the ABAP RESTful Application Programming Model (RAP). 
-
-**The business context for the scenario is as follows:** 
-The department responsible for managing worldwide Travels for multiple Agencies is requesting you to build a new SAP Fiori app, Manage Travels, with different capabilities to process travel bookings. More information on the scenario and the app will be given throughout the exercises.
-
-<!--
 
 <details>
 <summary>ℹ️Click to expand!</summary>

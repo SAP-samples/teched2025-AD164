@@ -10,6 +10,24 @@ In this workshop, you’ll get hands-on experience with ABAP Cloud and grasp how
 
 **The business context for the scenario is as follows:**     
 The department responsible for managing worldwide Travels for multiple Agencies is requesting you to build a new SAP Fiori app, Manage Travels, with different capabilities to process travel bookings. More information on the scenario and the app will be given throughout the exercises.
+  
+**Resulting app:**     
+<details>
+<summary>Click to expand!</summary>
+Below is an illutrastion of the RAP-based  _Manage Travels_ app built with **ABAP Cloud**:
+    <details>
+    <summary>🖼️Click to expand!</summary>
+    <img src="exercises/images/travelapp_rap_sol01.png" alt="ABAP Cloud - Manage Travels App" width="100%"> 
+    </details>
+
+The OData service you are going to implement is based on the simplified _Flight_ data model below.
+    <details>
+    <summary>🖼️Click to expand!</summary>
+    <img src="exercises/images/ad164_datamodel01.png" alt="Simplified Flight Data Model" width="80%"> 
+    </details>
+</details>
+
+<br/>
 
 > [!NOTE]  
 > Please note that the focus of this hands-on workshop is on backend development – specifically, developing OData UI services, including the UI semantics for the SAP Fiori elements UI – rather than on SAP Fiori UI development.  

@@ -1,0 +1,125 @@
+managed implementation in class zbp_ad164_r_travel_### unique;
+strict ( 2 );
+with draft;
+
+with privileged mode disabling NoCheckWhenPrivileged;
+define authorization context NoCheckWhenPrivileged { '/DMO/TRVL'; }
+define own authorization context by privileged mode;
+
+define behavior for ZAD164_R_Travel_### alias Travel
+persistent table zad164_trvl_###
+draft table zad164_trvld_###
+lock master total etag LastChangedAt
+authorization master ( global, instance )
+etag master LocalLastChangedAt
+with additional save with full data
+{
+  create ( precheck );
+  update ( precheck );
+  delete;
+
+  association _Booking { create; with draft; }
+
+  field ( numbering : managed, readonly ) TravelUUID;
+  field ( readonly : update, mandatory : create ) AgencyID;
+  field ( readonly ) TravelID, OverallStatus, TotalPrice, LocalCreatedAt, LocalCreatedBy, LocalLastChangedAt, LocalLastChangedBy, LastChangedAt;
+  field ( mandatory ) CustomerID, BeginDate, EndDate, CurrencyCode;
+
+  event statusUpdated parameter ZAD164_A_StatusUpdated_###;
+
+  action ( features : instance, authorization : update ) acceptTravel result [1] $self;
+  action ( features : instance, authorization : update ) rejectTravel result [1] $self;
+  internal action reCalcTotalPrice;
+
+  determination setTravelNumber on save { create; }
+  determination setStatusToOpen on modify { create; }
+  determination calculateTotalPrice on modify { create; field BookingFee, CurrencyCode; }
+
+  validation validateCustomer on save { create; field CustomerID; }
+  validation validateAgency on save { create; field AgencyID; }
+  validation validateDates on save { create; field BeginDate, EndDate; }
+  validation validateCurrencyCode on save { create; field CurrencyCode; }
+
+  side effects
+  { field BookingFee affects field TotalPrice; }
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare
+  {
+    validation validateAgency;
+    validation validateCustomer;
+    validation validateDates;
+    validation validateCurrencyCode;
+    validation Booking~validateCustomer;
+    validation Booking~validateConnection;
+    validation Booking~validateCurrencyCode;
+    validation Booking~validateFlightPrice;
+  }
+
+  mapping for zad164_trvl_###
+    {
+      AgencyID           = agency_id;
+      BeginDate          = begin_date;
+      BookingFee         = booking_fee;
+      CurrencyCode       = currency_code;
+      CustomerID         = customer_id;
+      Description        = description;
+      EndDate            = end_date;
+      LastChangedAt      = last_changed_at;
+      LocalCreatedAt     = local_created_at;
+      LocalCreatedBy     = local_created_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LocalLastChangedBy = local_last_changed_by;
+      OverallStatus      = overall_status;
+      TotalPrice         = total_price;
+      TravelID           = travel_id;
+      TravelUUID         = travel_uuid;
+    }
+}
+
+define behavior for ZAD164_R_Booking_### alias Booking
+persistent table zad164_book_###
+draft table zad164_bookd_###
+lock dependent by _Travel
+authorization dependent by _Travel
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+  association _Travel { with draft; }
+
+  field ( numbering : managed, readonly ) BookingUUID;
+  field ( readonly ) TravelUUID, BookingID, BookingDate, LocalLastChangedAt;
+  field ( mandatory ) CustomerID, AirlineID, ConnectionID, FlightDate, CurrencyCode;
+
+  determination setBookingNumber on save { create; }
+  determination setBookingDate on save { create; }
+  determination calculateTotalPrice on modify { create; field FlightPrice, CurrencyCode; }
+
+  validation validateCustomer on save { create; field CustomerID; }
+  validation validateConnection on save { create; field AirlineID, ConnectionID, FlightDate; }
+  validation validateCurrencyCode on save { create; field CurrencyCode; }
+  validation validateFlightPrice on save { create; field FlightPrice; }
+
+  side effects
+  { field FlightPrice affects field _Travel.TotalPrice; }
+
+  mapping for zad164_book_###
+    {
+      AirlineID          = carrier_id;
+      BookingDate        = booking_date;
+      BookingID          = booking_id;
+      BookingStatus      = booking_status;
+      BookingUUID        = booking_uuid;
+      ConnectionID       = connection_id;
+      CurrencyCode       = currency_code;
+      CustomerID         = customer_id;
+      FlightDate         = flight_date;
+      FlightPrice        = flight_price;
+      LocalLastChangedAt = local_last_changed_at;
+      TravelUUID         = parent_uuid;
+    }
+}

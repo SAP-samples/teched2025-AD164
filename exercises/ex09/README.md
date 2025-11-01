@@ -131,11 +131,14 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 8. Save![ ](../images/adt_save.png) (**Ctrl+S**) and activate![ ](../images/adt_activate.png) (**Ctrl+F3**) the changes.
 
-9. To enhance the behavior implementation class ![ ](../images/adt_class.png)**`zbp_ad164_r_travel_###`**, **simply go directly to the next exercise (_Exercise 9.2_)** – or first trigger the addition of the missing methods using the *Quick Fix* function (*Ctrl+1*) in the behavior definition ![ ](../images/adt_bdef.png) as described below (_click to expand_).
+9. To enhance the behavior implementation class ![ ](../images/adt_class.png)**`zbp_ad164_r_travel_###`**, simply go directly to the next exercise (_Exercise 9.2_) ...
      
    <details>
      <summary>Click to expand!</summary>  
-    
+   <br/> 
+     
+   ... or first trigger the addition of the missing methods using the *Quick Fix* function (*Ctrl+1*) in the behavior definition ![ ](../images/adt_bdef.png) as described below.
+   
    For the _Travel_ BO entity, go to the yellow-underlined statement **`define behavior for ZAD164_R_Travel_### alias Travel`**, place the cursor on the behavior name, press **Ctrl+1** to start the _Quick Assist_ view, and double-click the entry Add **`There are 11 methods missing for entity zad164_r_travel_###. Add them to 
 local handler class lhc_travel inside global class zbp_ad164_r_travel_###.`** in the dialog to open the class creation wizard. This will trigger an adjustment of the local handler class **`lhc_travel`**.
 

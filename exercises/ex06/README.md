@@ -608,12 +608,6 @@ To do this, you'll create two CDS behavior definition objects – ![ ](../images
      LocalLastChangedAt;      
    }                
    </pre>
-
-   **ℹ️ Brief explanation**:   ⚠️🚧 provide info...⚠️🚧
-   > - `type` – #FOR_ACTION
-   > - `dataAction` – 'acceptTravel' or 'acceptTravel'
-   > - `label` – 'Accept Travel'
-   > - `position` –
      
   </details>       
 

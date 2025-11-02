@@ -57,8 +57,14 @@ The **instance authorization** ensures that following operations of the entity c
 End user with the authorization object **`/DMO/TRVL`** will be allowed to modify _Travel_ records only if for the allowed country codes maintained in the authorization field **`/DMO/CNTRY`** and the authorization field **`ACTVT`** contain the permitted activity value **`02`** (**_Change_**).
 
 In this scenario, the role **`ZAD164`** contains the authorization object **`/DMO/TRVL`** with following authorizations: 
-- `/DMO/CNTRY`: DE, US
-- `ACTVT`: All activities (01: _Add or create_, 02: _Change_, 03: _Display_, and 06: _Delete_)
+- **Authorization 00**
+  - `/DMO/CNTRY`: **DE**, **US**
+  - `ACTVT`: **All activities** (`01`: _Add or create_, `02`: _Change_, `03`: _Display_, and `06`: _Delete_)
+- **Authorization 01**
+  - `/DMO/CNTRY`: **GB**
+  - `ACTVT`: **Display** (`03`)
+
+This means that you are only allowed to display _travel_ records for the countries DE, US, and GB but only allowed to change the overal travel status for the countries DE and US.
 
 Additionaly, you will define an _authorization context_ (`NoCheckWhenPrivileged`) and the _privileged mode_ for the _Travel_ BO to disable authorization checks for **`/DMO/TRVL`** when it is accessed in privileged mode.
 
@@ -487,12 +493,12 @@ Additionaly, you will define an _authorization context_ (`NoCheckWhenPrivileged`
  
  1. Go to the app in the browser if still open or else, start the app preview again from your service binding  ![ ](../images/adt_srvb.png)**`ZAD164_UI_Travel_O4_###`**.
     
- 2. Now, go to your _Manage Travels_ app and, for example, and accept or reject a _Travel_ entry using the respective buttons, _Accept Travel_ and _reject Travel_. 
+ 2. Now, go to your _Manage Travels_ app, load the data by pressing **Go**, and, for example, and accept or reject a _Travel_ record using the respective buttons, **_Accept Travel_** and **_Reject Travel_**.
+
+    You are now only authorized to change the overal status of travel records for the countries **DE** and **US**, not **GB**.
     
-    <img src="images/ad164_84_modauth05.png" alt="Modify Authorizations" width="70%">   
-  
- </details>
-        
+    <!-- <img src="images/ad164_84_modauth05.png" alt="Modify Authorizations" width="70%">   -->
+          
 </details> 
 
 ## Summary & Next exercise

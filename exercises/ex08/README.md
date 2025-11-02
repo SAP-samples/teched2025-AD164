@@ -64,9 +64,9 @@ In this scenario, the role **`ZAD164`** contains the authorization object **`/DM
   - `/DMO/CNTRY`: **GB**
   - `ACTVT`: **Display** (`03`)
 
-This means that you are only allowed to display _travel_ records for the countries DE, US, and GB but only allowed to change the overal travel status for the countries DE and US.
+This means that you're only allowed to display _travel_ records for the countries **DE**, **US**, and **GB**, and you're only allowed to change the overal travel status for **DE** and **US** - not for **GB**.
 
-Additionaly, you will define an _authorization context_ (`NoCheckWhenPrivileged`) and the _privileged mode_ for the _Travel_ BO to disable authorization checks for **`/DMO/TRVL`** when it is accessed in privileged mode.
+Additionaly, you'll define an _authorization context_ (`NoCheckWhenPrivileged`) and the _privileged mode_ for the _Travel_ BO to disable authorization checks for **`/DMO/TRVL`** when it is accessed in privileged mode.
 
 <br/><img src="images/ad164_81_modauth01.png" alt="Modify Authorizations" width="70%">
 

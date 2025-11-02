@@ -79,11 +79,23 @@
 
    ![Open ABAP Perspective](images/abap_perspective.png)
 
-2. Create the **ABAP Project** as shown in the screenshots below. 
+<!--
+2. Create the **ABAP Project** and connect to the SAP TechEd system **HE4** as shown in the screenshots below.  
+
+   Use following user credentials to log in:
+   - Client **400**
+   - User: **AD164-###** (where `###` is your personal suffix)
+   - Password: _Info provided by instructors_
+
+   <br/>
+   <img src="images/techedlaptop_ad164_create_abap_project.png" alt="Create ABAP Project" width="100%">
+-->
+
+2. Create the **ABAP Project** as shown in the screenshots below.
   
    Maintain the required system info and click **Next >**:
    - System ID: **HE4**
-   - Server: _Info provided by instructor_
+   - Server: _Info provided by instructors_
    - System instance: **00**
 
    <br/>
@@ -91,8 +103,8 @@
 
    Now provide the system client and user credentials:
    - Client **400**
-   - User: **AD164-###**
-   - Password: _Info provided by instructor_
+   - User: **AD164-###** (where `###` is your personal suffix)
+   - Password: _Info provided by instructors_
        
    You can keep the default **_Project name_** and click **Finish** to create the new ABAP Cloud Project in the **_Project Explorer_** view. 
 

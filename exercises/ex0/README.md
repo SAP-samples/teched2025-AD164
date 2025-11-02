@@ -79,7 +79,7 @@
 
    ![Open ABAP Perspective](images/abap_perspective.png)
 
-2. If not done already, now create the **ABAP Project** as shown in the screenshots below. 
+2. Create the **ABAP Project** as shown in the screenshots below. 
   
    Maintain the required system info and click **Next >**:
    - System ID: **HE4**

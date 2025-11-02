@@ -70,12 +70,12 @@
    
 ## Create a connection to the ABAP system in ADT
 
-> Create an **ABAP Project** to connect your ADT client to the **SAP S/4HANA** or **SAP S/4HANA Cloud Private Edition** system.
+> Start the **ABAP Development Tools for Eclipse** (ADT) and create an **ABAP Project** to connect your ADT client to the **SAP S/4HANA** or **SAP S/4HANA Cloud Private Edition** system.
 
 <details>
   <summary>🔵 Click to expand!</summary>
    
-1. Go to ADT and open the **ABAP** perspective as shown in the screenshot below if not yet done.
+1. Start ADT and open the **ABAP** perspective as shown in the screenshot below if not yet done.
 
    ![Open ABAP Perspective](images/abap_perspective.png)
 

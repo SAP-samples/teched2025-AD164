@@ -53,7 +53,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
  
 1. Open the behavior definition ![ ](../images/adt_bdef.png)**`ZAD164_R_Travel_###`** in the _Project Explorer_ and start the adjustment.
 
-2. For the full enablement of the _create_, _update_, and _delete_ operations, as well as the draft handling, you need to do following adjustments: 
+2. For the full enablement of the _create_, _update_, and _delete_ operations, as well as the draft handling, you need to do the following adjustments: 
 
    - Add the full CUD operations: `Create`, `Update`, `Delete`, _Create-by-association_, etc...
    - Enable the draft handling for the _Travel_ BO, the _create-by-association_ operation, etc...
@@ -65,7 +65,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
    > - 💡 Make use of the _Copy Raw Content_ (<img src="../images/copyrawfile.png" alt="" width="3%">) function to copy the source code.
    > - 🔍 Review the source code and feel free to ask the instructors if anything is unclear.           
      
-   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 01: ZAD164_R_Travel_###](images/ex09_bdef_zad164_r_travel_02.txt)
+   🟡📄 **Source code document**: ![class icon](../images/adt_bdef.png)[Behavior Definition 01: ZAD164_R_Travel_###](images/ex09_bdef_zad164_r_travel_01.txt)
 
    The changes are highlighted in the screenshot below.
 
@@ -77,7 +77,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 3. Save![ ](../images/adt_save.png) (**Ctrl+S**) the changes.
    
    > ℹ️ **Note**     
-   > You will not be able to activate the changes now because of missing draft persitencies ![ ](../images/adt_tabl.png)`zad164_trvld_###` and ![ ](../images/adt_tabl.png)`zad164_bookd_###` and
+   > You will not be able to activate the changes now because of missing draft persistencies ![ ](../images/adt_tabl.png)`zad164_trvld_###` and ![ ](../images/adt_tabl.png)`zad164_bookd_###` and
    > other issues that will be fixed in the next steps.   
    >  <table>
    >   <tr><img src="images/ad164_91_fullcrud01b.png" alt="CRUD Enablement" width="60%"></tr>
@@ -86,7 +86,7 @@ To do this, you will enhance the behavior definition ![ ](../images/adt_bdef.png
 
 4. Generate the missing draft table ![ ](../images/adt_tabl.png)**`zad164_trvld_###`** for storing draft _travel_ data using the ADT _Quick Fix_ function. To do this, perform the steps below.  
 
-   1. Place the cursor on the draft table name **`zad164_travld_###`**, press **Ctrl+1** to open the **Quick Assist** view, and double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table.
+   1. Place the cursor on the draft table name **`zad164_trvld_###`**, press **Ctrl+1** to open the **Quick Assist** view, and double-click on **`Create draft table zad164_...d_### to store draft data for entity zad164_r_..._###.`** to generate the missing database table.
 
       <img src="images/ad164_91_fullcrud02a.png" alt="CRUD Enablement" width="100%">
       
@@ -144,10 +144,10 @@ local handler class lhc_travel inside global class zbp_ad164_r_travel_###.`** in
 
    <img src="images/ad164_91_fullcrud03a.png" alt="CRUD Enablement" width="80%">
        
-   Save![ ](../images/adt_save.png) (**Ctrl+S**) and go back to the behavior defintiion.
+   Save![ ](../images/adt_save.png) (**Ctrl+S**) and go back to the behavior definition.
        
    For the _Booking_ BO entity, go to one of the yellow-underlined statements – e.g. **`determination setBookingNumber on save { create; }`** –,  place the cursor on the determination name, press **Ctrl+1** to start the _Quick Assist_ view, and double-click the entry Add **`There are 7 methods missing for entity zad164_r_booking_###. Add them 
-within a new local handler class inside global class zbp_ad164_r_travel_###.`** in the dialog to open the class creation wizard. This will trigger the addition of a new local handler class for the booking entity to the the _travel_ behavior pool. This will trigger the addition of the local handler class **`lhc_booking`**
+within a new local handler class inside global class zbp_ad164_r_travel_###.`** in the dialog to open the class creation wizard. This will trigger the addition of a new local handler class for the booking entity to the _travel_ behavior pool. This will trigger the addition of the local handler class **`lhc_booking`**
 
    <img src="images/ad164_91_fullcrud03b.png" alt="CRUD Enablement" width="80%">   
       
@@ -164,7 +164,7 @@ within a new local handler class inside global class zbp_ad164_r_travel_###.`** 
 <details>
   <summary>🔵Click to expand!</summary>   
 
-1. Open the class (../images/adt_class.png)**`ZBP_AD164_R_Travel_###`** in the _Relation Explorer_ and go to the **◇Local Types** tab.
+1. Open the class ![ ](../images/adt_class.png)**`ZBP_AD164_R_Travel_###`** in the _Project Explorer_ and go to the **◇Local Types** tab.
 
 2. Due to time constraints, simply replace the complete source code with the one provided below (🟡📄) and replace **`###`** with your personal suffix using the _Replace All_ function (**Ctrl+F**).
 
@@ -182,12 +182,12 @@ within a new local handler class inside global class zbp_ad164_r_travel_###.`** 
 
 > Expose the enhanced transactional behavior to the consumption layer by adjusting the behavior of the _Travel_ BO projection ![ ](../images/adt_bdef.png)`ZAD164_C_Travel_###`.
 > 
-> **Note**: Validations and determinations are automatically trigerred by the RAP application infrastructure at the deined time. CUD, draft handling, actions, side effects and other non-standard behavior must be exposed explicitely to the consumption layer, namely the BO projections and BO interfaces..  
+> **Note**: Validations and determinations are automatically triggered by the RAP application infrastructure at the defined time. CUD, draft handling, actions, side effects and other non-standard behavior must be exposed explicitly to the consumption layer, namely the BO projections and BO interfaces.  
 
 <details>
   <summary>🔵Click to expand!</summary>   
 
-1. Open the behavior projection ![ ](../images/adt_bdef.png)**`ZAD164_C_Travel_###`** in the _Relation Explorer_.
+1. Open the behavior projection ![ ](../images/adt_bdef.png)**`ZAD164_C_Travel_###`** in the _Project Explorer_.
 
 2. Now expose the CUD operations, the draft handling, and the side effects to the consumption layer.
        
@@ -253,7 +253,7 @@ within a new local handler class inside global class zbp_ad164_r_travel_###.`** 
  
  1. Go to the app in the browser if still open or else, start the app preview again from your service binding  ![ ](../images/adt_srvb.png)**`ZAD164_UI_Travel_O4_###`**.
     
-    The standard **Create**, **Edit**, and **Delete** buttons should appears on the UI. 
+    The standard **Create**, **Edit**, and **Delete** buttons should appear on the UI. 
    
  2. Now, go ahead and try to create new _travel_ and _booking_ records, and edit or delete existing ones. 
     

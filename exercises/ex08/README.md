@@ -356,53 +356,53 @@ Additionaly, you'll define an _authorization context_ (`NoCheckWhenPrivileged`) 
       
       CLASS lhc_Travel IMPLEMENTATION.
       
-        METHOD get_instance_authorizations.
+     METHOD get_instance_authorizations.
       
-           DATA: update_granted TYPE abap_bool.
-      
-           READ ENTITIES OF ZAD164_R_Travel_### IN LOCAL MODE
-             ENTITY Travel
-               FIELDS ( AgencyID )
-               WITH CORRESPONDING #( keys )
-               RESULT DATA(travels)
-             FAILED failed.
-      
-           CHECK travels IS NOT INITIAL.
-      
-           SELECT FROM zad164_trvl_### AS travel
-             INNER JOIN /dmo/i_agency AS agency ON travel~agency_id = agency~AgencyID
-             FIELDS travel~travel_uuid , travel~agency_id, agency~CountryCode
-             FOR ALL ENTRIES IN @travels
-             WHERE travel_uuid EQ @travels-TravelUUID
-             INTO  TABLE @DATA(travel_agency_country).
-      
-           LOOP AT travels INTO DATA(travel).
-             READ TABLE travel_agency_country WITH KEY travel_uuid = travel-TravelUUID
-               ASSIGNING FIELD-SYMBOL(<travel_agency_country_code>).
-      
-             IF sy-subrc EQ 0.
-               update_granted = is_update_granted( <travel_agency_country_code>-CountryCode ).
-               IF update_granted = abap_false.
-                 APPEND VALUE #( %tky              = travel-%tky
-                                 %msg              = NEW /dmo/cm_flight_messages(
-                                 textid    = /dmo/cm_flight_messages=>not_authorized_for_agencyid
-                                 agency_id = travel-AgencyID
-                                 severity  = if_abap_behv_message=>severity-error )
-                                 %element-AgencyID = if_abap_behv=>mk-on
-                               ) TO reported-travel.
-               ENDIF.
-             ELSE.
-               update_granted = abap_false.
-             ENDIF.
-      
-             APPEND VALUE #( %tky = travel-%tky
-                             %update = COND #( WHEN update_granted = abap_true
-                                               THEN if_abap_behv=>auth-allowed
-                                               ELSE if_abap_behv=>auth-unauthorized )
-                           ) TO result.
-           ENDLOOP.
-      
-         ENDMETHOD.       
+        DATA: update_granted TYPE abap_bool.
+    
+        READ ENTITIES OF ZAD164_R_Travel_### IN LOCAL MODE
+          ENTITY Travel
+            FIELDS ( AgencyID )
+            WITH CORRESPONDING #( keys )
+            RESULT DATA(travels)
+          FAILED failed.
+    
+        CHECK travels IS NOT INITIAL.
+    
+        SELECT FROM zad164_trvl_### AS travel
+          INNER JOIN /dmo/i_agency AS agency ON travel~agency_id = agency~AgencyID
+          FIELDS travel~travel_uuid , travel~agency_id, agency~CountryCode
+          FOR ALL ENTRIES IN @travels
+          WHERE travel_uuid EQ @travels-TravelUUID
+          INTO  TABLE @DATA(travel_agency_country).
+    
+        LOOP AT travels INTO DATA(travel).
+          READ TABLE travel_agency_country WITH KEY travel_uuid = travel-TravelUUID
+            ASSIGNING FIELD-SYMBOL(&lttravel_agency_country_code&gt).
+    
+          IF sy-subrc EQ 0.
+            update_granted = is_update_granted( &lttravel_agency_country_code&gt-CountryCode ).
+            IF update_granted = abap_false.
+              APPEND VALUE #( %tky              = travel-%tky
+                              %msg              = NEW /dmo/cm_flight_messages(
+                              textid    = /dmo/cm_flight_messages=>not_authorized_for_agencyid
+                              agency_id = travel-AgencyID
+                              severity  = if_abap_behv_message=>severity-error )
+                              %element-AgencyID = if_abap_behv=>mk-on
+                            ) TO reported-travel.
+            ENDIF.
+          ELSE.
+            update_granted = abap_false.
+          ENDIF.
+    
+          APPEND VALUE #( %tky = travel-%tky
+                          %update = COND #( WHEN update_granted = abap_true
+                                            THEN if_abap_behv=>auth-allowed
+                                            ELSE if_abap_behv=>auth-unauthorized )
+                        ) TO result.
+        ENDLOOP.
+    
+      ENDMETHOD.     
       
         METHOD acceptTravel.
       

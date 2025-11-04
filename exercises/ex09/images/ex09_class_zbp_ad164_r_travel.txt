@@ -827,7 +827,7 @@ CLASS lhc_booking IMPLEMENTATION.
     LOOP AT travels INTO DATA(travel).
 
       " find max used bookingID in all bookings of this travel
-      max_bookingid = '###0'.
+      max_bookingid = '0000'.
       LOOP AT booking_links INTO DATA(booking_link) USING KEY id WHERE source-%tky = travel-%tky.
         " Short dump occurs if link table does not match read table, which must never happen
         booking = bookings[ KEY id  %tky = booking_link-target-%tky ].

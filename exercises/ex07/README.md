@@ -130,8 +130,8 @@ To do this, you will create the CDS abstract entity `ZAD164_A_STATUSUPDATED_RAP_
     
         event statusUpdated parameter ZAD164_A_StatusUpdated_###;
     
-        action acceptTravel ( features : instance ) result [1] $self;
-        action rejectTravel ( features : instance ) result [1] $self;
+        action ( features : instance ) acceptTravel result [1] $self;
+        action ( features : instance ) rejectTravel result [1] $self;
     
         mapping for zad164_trvl_###
           {

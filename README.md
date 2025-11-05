@@ -173,6 +173,11 @@ The exercises below are optional and can be completed by participants if time pe
 | [Exercise 9 – Full transactional enablement of the _Travel_ BO](exercises/ex09/README.md) | -- |
 | [Exercise 10 – Exploring the Entity Manipulation Language (EML)](exercises/ex10/README.md) | -- |
 
+## Presentation
+[^Top of page](#)
+
+Access the presentation: 
+[<img src="exercises/images/ad164_slidedeck.png" alt="AD164 Slide Deck" width="30%"> ](exercises/images/AD164.pdf)
 
 ## Solution Package
 [^Top of page](#)

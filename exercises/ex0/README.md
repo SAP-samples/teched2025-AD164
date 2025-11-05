@@ -79,7 +79,7 @@
 
    ![Open ABAP Perspective](images/abap_perspective.png)
 
-<!--
+
 2. Create the **ABAP Project** and connect to the SAP TechEd system **HE4** as shown in the screenshots below.  
 
    Use following user credentials to log in:
@@ -89,7 +89,9 @@
 
    <br/>
    <img src="images/techedlaptop_ad164_create_abap_project.png" alt="Create ABAP Project" width="100%">
--->
+
+
+<!--
 
 2. Create the **ABAP Project** as shown in the screenshots below.
   
@@ -110,6 +112,9 @@
 
    <br/>
    <img src="images/abapproject_systemlogon2.png" alt="Create ABAP Project 2/2" width="50%">
+
+-->
+   
 </details>
 
 <br/>

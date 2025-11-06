@@ -236,7 +236,9 @@ Once you've found an available group ID, choose **Cancel**.
 
   _Travel_ and _booking_ demo data can be filled in the relevant tables by executing (**F9**) the class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** which is also provided. 
   
-1. Generate _Travel_ and _Booking_ demo data in the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**, respectively.
+1. Add your exercise package ![ ](../images/adt_package.png)**`AD164_EX_###`** to the **Favorite packages**, where **`###`** is your personal suffix.
+
+2. Generate _Travel_ and _Booking_ demo data in the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**, respectively.
 
    To do this, open the ABAP class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`**, where **`###`** is your personal suffix, and execute the class by pressing **F9**.
 
@@ -245,7 +247,7 @@ Once you've found an available group ID, choose **Cancel**.
    <img src="images/generate_demo_data01.png" alt="Generate demo data" width="80%">  
 
 <!--   
-2. You can check the result of the class run for the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**.
+3. You can check the result of the class run for the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**.
 
    To do this, simply open each database table by double clicking on it and press **F8** to start the **_Data Preview_**.
 

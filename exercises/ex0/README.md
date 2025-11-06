@@ -236,7 +236,7 @@ Once you've found an available group ID, choose **Cancel**.
 
   _Travel_ and _booking_ demo data can be filled in the relevant tables by executing (**F9**) the class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** which is also provided. 
   
-1. Add your exercise package ![ ](../images/adt_package.png)**`AD164_EX_###`** to the **Favorite packages**, where **`###`** is your personal suffix.
+1. Add your exercise package ![ ](../images/adt_package.png)**`AD164_EX_###`** to the _**Favorite Packages**_, where **`###`** is your personal suffix.
 
 2. Generate _Travel_ and _Booking_ demo data in the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**, respectively.
 

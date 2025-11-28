@@ -21,6 +21,7 @@
 
 -  Deep Dive: [AD104 - Boost your  ABAP development with Joule for developers](https://www.sap.com/events/teched/berlin/flow/sap/te25/catalog-inperson/page/catalog/session/1749110017215001w1iM)
 -  Hands-on Workshop: [AD162 - Explore Joule for developers, ABAP AI capabilities](https://www.sap.com/events/teched/berlin/flow/sap/te25/catalog-inperson/page/catalog/session/1749111133585001neK1)
+-  Documentation: [SAP Joule for Developers, ABAP AI capabilities](https://help.sap.com/docs/abap-ai/generative-ai-in-abap-cloud/develop-52db29f1cd46401f81449862ae51fab1) | [ABAP AI SDK](https://help.sap.com/docs/abap-ai/generative-ai-in-abap-cloud/develop)
 
 <br/>
 
@@ -39,7 +40,9 @@ The ABAP Development Tools for Eclipse (ADT) offers **standard ABAP Cloud genera
 </details>
 
 **Relevant content**
--  Hands-on Workshop: [RAP100 – Build Fiori Apps with the ABAP RESTful Application Programming Model (RAP) ](https://github.com/SAP-samples/abap-platform-rap100/blob/main/README.md)
+- Demo: [A Beginner's Guide to the ABAP RESTful Application Programming Model (RAP)](https://www.youtube.com/watch?v=i0A9iZ_46fI&t=94s) 
+- Hands-on Workshop: [RAP100 – Build Fiori Apps with RAP](https://github.com/SAP-samples/abap-platform-rap100/blob/main/README.md)
+- Documentation: [RAP Development Guides](https://help.sap.com/docs/abap-cloud/abap-rap/develop)
 
 <!--
 **Relevant sessions at SAP TechEd 2025:**

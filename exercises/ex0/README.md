@@ -173,6 +173,7 @@ This version of the _Manage Travels_ app includes various RAP capabilities, that
 
 <br/>
 
+<!--
 ## Group ID (Suffix)
 [^Top of page](#)
 
@@ -185,15 +186,21 @@ The suffix is used to uniquely identify your repository artefacts and distinguis
 > 
 > For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.   
 > <img src="images/find01.png" alt="find and replace" width="40%">
-   
-<!--
+-->   
+
 ## Group ID (Suffix)
 [^Top of page](#)
 
 In this exercise step, you will define a group ID, which will be use as **suffix** throughout this workshop to uniquely identify your repository artefacts and distinguish them from those of other users working on the same system. 
 
-> [!NOTE]  
+> [!IMPORTANT]  
 > Attendees of **on-site SAP-led events**, such as SAP TechEd 2025, will be assigned a group ID by the SAP team, which should be used as **suffix**. They can therefore skip this section and proceed directly with the next one: _Your Exercise Package_.
+
+> [!NOTE]  
+> In the course of these exercises you will frequently see the task to "_replace the placeholder **`###`** with your personal suffix_", where *###* is your assigned suffix.
+> 
+> For this it's recommended to make use of the **Find/Replace** feature of the Eclipse Editor. It can be opened either via the menu (**_Edit -> Find/Replace..._**) or via **Ctrl+F**.   
+> <img src="images/find01.png" alt="find and replace" width="40%">
 
 <details>
   <summary>Click to expand!</summary>
@@ -217,7 +224,7 @@ Once you've found an available group ID, choose **Cancel**.
 <img src="images/groupid01.png" alt="determine group id" width="40%">
 
 </details>
--->
+
 
 <br/>
 
@@ -226,36 +233,36 @@ Once you've found an available group ID, choose **Cancel**.
 
 > **For on-site attendees of SAP TechEd 2025 events and ASUG Tech Connect 2025**:    
 > You'll use the development package **`ZAD164_EX_###`**, where **`###`** is your personal suffix (_group ID_), to complete the exercises of this hands-on workshop. 
-
-<details>
-  <summary>🔵Click to expand!</summary>
-  <br/>
-  
-  Due to time constraints, **attendees of on-site SAP TechEd 2025 events or ASUG Tech Connect 2025** will use pre-generated exercise packages and database tables for storing travel data (`ZAD164_TRVL_###`), booking data (`ZAD164_BOOK_###`), and event data (`ZAD164_EVLOG_###`). These development objects provide the starting points of the exercises.  
-
-  _Travel_ and _booking_ demo data can be filled in the relevant tables by executing (**F9**) the class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** which is also provided. 
-  
-1. Add your exercise package ![ ](../images/adt_package.png)**`AD164_EX_###`** to the _**Favorite Packages**_, where **`###`** is your personal suffix.
-
-2. Generate _Travel_ and _Booking_ demo data in the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**, respectively.
-
-   To do this, open the ABAP class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`**, where **`###`** is your personal suffix, and execute the class by pressing **F9**.
-
-   As a result, the message *`Data generation successfull`* will appear in the ADT **_Console_** view. 
-
-   <img src="images/generate_demo_data01.png" alt="Generate demo data" width="80%">  
-
+> 
+> <details>
+>   <summary>🔵Click to expand!</summary>
+>   <br/>
+>   
+>   Due to time constraints, **attendees of on-site SAP TechEd 2025 events or ASUG Tech Connect 2025** will use pre-generated exercise packages and database tables for storing travel data (`ZAD164_TRVL_###`), booking data (`ZAD164_BOOK_###`), and event data (`ZAD164_EVLOG_###`). These development objects provide the starting points of the exercises.  
+> 
+>   _Travel_ and _booking_ demo data can be filled in the relevant tables by executing (**F9**) the class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** which is also provided. 
+>   
+> 1. Add your exercise package ![ ](../images/adt_package.png)**`AD164_EX_###`** to the _**Favorite Packages**_, where **`###`** is your personal suffix.
+> 
+> 2. Generate _Travel_ and _Booking_ demo data in the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**, respectively.
+> 
+>    To do this, open the ABAP class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`**, where **`###`** is your personal suffix, and execute the class by pressing **F9**.
+> 
+>   As a result, the message *`Data generation successfull`* will appear in the ADT **_Console_** view. 
+> 
+>   <img src="images/generate_demo_data01.png" alt="Generate demo data" width="80%">  
+> 
 <!--   
-3. You can check the result of the class run for the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**.
+> 3. You can check the result of the class run for the database tables **`ZAD164_TRVL_###`** and **`ZAD164_BOOK_###`**.
+> 
+>    To do this, simply open each database table by double clicking on it and press **F8** to start the **_Data Preview_**.
+> 
+>    <img src="images/generate_demo_data02.png" alt="Generate demo data" width="80%"> 
+> -->
+>  
+> </details>
 
-   To do this, simply open each database table by double clicking on it and press **F8** to start the **_Data Preview_**.
 
-   <img src="images/generate_demo_data02.png" alt="Generate demo data" width="80%"> 
--->
- 
-</details>
-
-<!--
 > [!IMPORTANT] 
 > **FOR THE SELF-PACE MODE**:    
 > If you don't have access to a prepared ABAP system provided by SAP, you'll need to **create your own exercise package and a few development objects** before starting with the first exercise. Follow the instructions provided below to do so.
@@ -273,7 +280,7 @@ Once you've found an available group ID, choose **Cancel**.
 > 4. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_EVLOG_###`** in package **`ZAD164_EX_###`** – for storing the event data ([📄source code](images/ex0_tabl_zad164_evlog.txt)).
 > 5. Create the global class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** in package **`ZAD164_EX_###`** – for generating demo travel and booking data ([📄source code](images/ex0_class_zcl_ad164_fill_tables.txt)).
 > </details>
--->
+
 
 <br/>
 

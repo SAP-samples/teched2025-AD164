@@ -11,8 +11,9 @@
 **Demo about the creation of a transactional UI service from scratch:**
 
 <details>
-<summary>🖼️Click to expand!</summary>
-
+<summary>🖼️Click to expand! </summary>
+  ℹ️ Note: The demo may take a few seconds to load.
+  
   <br/>
   <img src="images/ai_abapcloud_generator.gif" alt="AI-based ABAP Cloud app generation" width="100%">   
 </details>
@@ -34,7 +35,8 @@ The ABAP Development Tools for Eclipse (ADT) offers **standard ABAP Cloud genera
 
 <details>
 <summary>🖼️Click to expand!</summary>
-
+  ℹ️ Note: The demo may take a few seconds to load.
+  
   <br/>
   <img src="images/standard_abapcloud_generator01.gif" alt="Classic ABAP Cloud app generation" width="100%"> 
 </details>

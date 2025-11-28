@@ -51,17 +51,17 @@ The OData service you are going to implement is based on the simplified _Flight_
 ## Requirements for attending this workshop
 [^Top of page](#)
 
-<!--
-To complete the practical exercises in this repository, you need the **latest _ABAP Development Tools for Eclipse_** (ADT) on your laptop or PC, and the access to a **suitable ABAP system**, namely at least release 2023 of SAP S/4HANA or SAP S/4HANA Cloud Private Edition, SAP BTP ABAP Environment, or SAP S/4HANA Cloud Public Cloud. In addition, the appropriate version of the [**ABAP Flight Reference Scenario**](https://github.com/SAP-samples/abap-platform-refscen-flight) (package `/DMO/FLIGHT`) must be imported into the system.
--->
 
+To complete the practical exercises in this repository, you need the **latest _ABAP Development Tools for Eclipse_** (ADT) on your laptop or PC, and the access to a **suitable ABAP system**, namely at least release 2023 of SAP S/4HANA or SAP S/4HANA Cloud Private Edition, SAP BTP ABAP Environment, or SAP S/4HANA Cloud Public Cloud. In addition, the appropriate version of the [**ABAP Flight Reference Scenario**](https://github.com/SAP-samples/abap-platform-refscen-flight) (package `/DMO/FLIGHT`) must be imported into the system.
+
+<!--
 > [!IMPORTANT]  
 > **For attendees of on-site SAP TechEd 2025 event**:  
 > Please note that appropriate **backend systems** will be provided by SAP for the hands-on worskops offered at one of the **on-site** SAP TechEd events in 2025 – i.e., SAP TechEd Berlin 2025, ASUG Tech Connect 2025, and SAP TechEd Bangalore 2025.
 >  
 > **Laptops** with the required ADT installation will also be provided to attendees of **SAP TechEd Berlin 2025** and **SAP TechEd Bangalore 2025**.
+-->
 
-<!--
 If you do not have access to SAP-owned systems and laptops, please follow the steps below.
 
 <details>
@@ -87,7 +87,6 @@ Before completing the exercises in this repository, you need to:
 2. Create an _ABAP Project_ or an _ABAP Cloud Project_ * to connect ADT to the ABAP system.
     > (*)  An _ABAP Cloud Project_ is needed to connect ADT to an SAP BTP ABAP Environment or SAP S/4HANA Cloud Public Edition system.
 4. If not yet done, import the appropriate version of the _[ABAP Flight Reference Scenario](https://github.com/SAP-samples/abap-platform-refscen-flight)_ (package `/DMO/FLIGHT`) into the system.      PS: It is already part of the SAP BTP trial   
--->
 
 </details>
 

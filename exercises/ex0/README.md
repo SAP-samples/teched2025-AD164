@@ -274,7 +274,7 @@ Once you've found an available group ID, choose **Cancel**.
 > Replace all occurrences of the placeholder **`###`** in the provided source code with your personal suffix. 
 > You can make use of _**Find and Replace**_ feature (**Ctrl+F**) in ADT to do this.
 >    
-> 1. Create the development package ![ ](../images/adt_package.png)**`ZAD164_EX_###`** with **`ZLOCAL`** as super package ("_ABAP for Cloud development_" as language version). 
+> 1. Create the development package ![ ](../images/adt_package.png)**`ZAD164_EX_###`** with **`ZLOCAL`** as super package (ABAP language version: "_ABAP for Cloud development_"). 
 > 2. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_TRVL_###`** in package **`ZAD164_EX_###`** – for storing the travel data ([📄source code](images/ex0_tabl_zad164_trvl.txt)).
 > 3. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_BOOK_###`** in package **`ZAD164_EX_###`** – for storing the booking data ([📄source code](images/ex0_tabl_zad164_book.txt)).
 > 4. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_EVLOG_###`** in package **`ZAD164_EX_###`** – for storing the event data ([📄source code](images/ex0_tabl_zad164_evlog.txt)).

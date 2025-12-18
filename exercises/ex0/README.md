@@ -231,6 +231,8 @@ Once you've found an available group ID, choose **Cancel**.
 ## Your Exercise Package
 [^Top of page](#)
 
+You'll complete the exercises of this hands-on workshop in the development package **`ZAD164_EX_###`**, where ### is your personal suffix (or group ID).
+
 > **For on-site attendees of SAP TechEd 2025 events and ASUG Tech Connect 2025**:    
 > You'll use the pre-generated development package **`ZAD164_EX_###`**, where **`###`** is your personal suffix (_group ID_), to complete the exercises of this hands-on workshop. 
 > 

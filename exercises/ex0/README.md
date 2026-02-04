@@ -268,8 +268,6 @@ You'll complete the exercises of this hands-on workshop in the development packa
 > [!IMPORTANT] 
 > **FOR THE SELF-PACE MODE**:    
 > If you don't have access to a prepared ABAP system provided by SAP, you'll need to **create your own exercise package and a few development objects** before starting with the first exercise. Follow the instructions provided below to do so.
-> <details>
-> <summary>Click to expand!</summary>
 >     
 > Create the development objects below in your system. 
 >  
@@ -281,7 +279,7 @@ You'll complete the exercises of this hands-on workshop in the development packa
 > 3. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_BOOK_###`** in package **`ZAD164_EX_###`** – for storing the booking data ([📄source code](images/ex0_tabl_zad164_book.txt)).
 > 4. Create the database table ![ ](../images/adt_tabl.png)**`ZAD164_EVLOG_###`** in package **`ZAD164_EX_###`** – for storing the event data ([📄source code](images/ex0_tabl_zad164_evlog.txt)).
 > 5. Create the global class ![ ](../images/adt_class.png)**`ZCL_AD164_FILL_TABLES_###`** in package **`ZAD164_EX_###`** – for generating demo travel and booking data ([📄source code](images/ex0_class_zcl_ad164_fill_tables.txt)).
-> </details>
+
 
 
 <br/>

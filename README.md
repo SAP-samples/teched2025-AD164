@@ -49,8 +49,6 @@ The OData service you are going to implement is based on the simplified _Flight_
 -->
 
 ## Requirements for attending this workshop
-[^Top of page](#)
-
 
 To complete the practical exercises in this repository, you need the **latest _ABAP Development Tools for Eclipse_** (ADT) on your laptop or PC, and the access to a **suitable ABAP system**, namely at least release 2023 of SAP S/4HANA or SAP S/4HANA Cloud Private Edition, SAP BTP ABAP Environment, or SAP S/4HANA Cloud Public Cloud. In addition, the appropriate version of the [**ABAP Flight Reference Scenario**](https://github.com/SAP-samples/abap-platform-refscen-flight) (package `/DMO/FLIGHT`) must be imported into the system.
 
@@ -131,7 +129,6 @@ The OData service you are going to implement is based on the simplified _Flight_
 -->
 
 ## Exercises
-[^Top of page](#)
 
 Follow the steps below to build the _Travel_ app based on an OData service on top of a draft-enabled RAP Business Object (BO) to develop a transactional Fiori elements List Report app from scratch using RAP. 
 
@@ -173,23 +170,19 @@ The exercises below are optional and can be completed by participants if time pe
 | [Exercise 10 – Exploring the Entity Manipulation Language (EML)](exercises/ex10/README.md) | -- |
 
 ## Presentation
-[^Top of page](#)
 
 Access the presentation: 
 [<img src="exercises/images/ad164_slidedeck.png" alt="AD164 Slide Deck" width="30%"> ](exercises/images/AD164.pdf)
 
 ## Solution Package
-[^Top of page](#)
 
 -/-
 
 ## Contributing
-[^Top of page](#)
 
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
 
 ## Code of Conduct
-[^Top of page](#)
 
 Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples/.github/blob/main/CODE_OF_CONDUCT.md).
 
@@ -200,12 +193,10 @@ No known issues.
 -->
 
 ## How to obtain support
-[^Top of page](#)
 
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
 ## Further Information
-[^Top of page](#)
 
 You can find further information on the ABAP Cloud and the ABAP RESTful Application Programming Model (RAP) here:
  - [ABAP Development at SAP Community](https://pages.community.sap.com/topics/abap) | SAP Community page
